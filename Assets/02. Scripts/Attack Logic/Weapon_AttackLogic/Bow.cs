@@ -71,15 +71,11 @@ public class Bow : MonoBehaviour
             GameObject boxPrefab;
             if (hit.collider != null && hit.distance >= i)
             {
-                boxPrefab = rangeShower; // 회색 상자
-                Debug.Log($"Creating grey box at {boxPosition}");
-
+                boxPrefab = rangeShower; 
             }
             else
             {
-                boxPrefab = rangeBox; // 빨간 상자
-                Debug.Log($"Creating red box at {boxPosition}");
-
+                boxPrefab = rangeBox; 
             }
 
             GameObject showingBox = Instantiate(boxPrefab, boxPosition, Quaternion.identity);

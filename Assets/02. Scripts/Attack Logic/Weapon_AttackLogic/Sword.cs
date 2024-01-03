@@ -60,12 +60,10 @@ public class Sword : MonoBehaviour
     {
         Vector2 frontPosition = (Vector2)transform.position + direction;
         CreateRangeBoxAtPosition(frontPosition);
-
-        // 왼쪽 방향에 상자 생성
+       
         Vector2 leftPosition = (Vector2)transform.position + (Vector2)(Quaternion.Euler(0, 0, 90) * direction);
         CreateRangeBoxAtPosition(leftPosition);
 
-        // 오른쪽 방향에 상자 생성
         Vector2 rightPosition = (Vector2)transform.position + (Vector2)(Quaternion.Euler(0, 0, -90) * direction);
         CreateRangeBoxAtPosition(rightPosition);
     }
