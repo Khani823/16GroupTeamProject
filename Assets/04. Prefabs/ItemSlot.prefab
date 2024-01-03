@@ -440,6 +440,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputData: {fileID: 11400000, guid: 8b176ac7e6a8d324c8b882a5e1c4b5c4, type: 2}
+  popup: {fileID: 0}
   popupEquip: {fileID: 0}
   itemImage: {fileID: 5703889911411532148}
   EquipMark: {fileID: 7210916274245402940}
@@ -487,18 +488,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
       - m_Target: {fileID: 6587343843291549974}
         m_TargetAssemblyTypeName: ItemSlot, Assembly-CSharp
         m_MethodName: Popup

@@ -9,7 +9,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 11caca5445e8c754282d42f77b2e4319, type: 3}
-  m_Name: GameDate
+  m_Script: {fileID: 11500000, guid: b597242af57330945a22e8bf03013df0, type: 3}
+  m_Name: Item_Portion blue
   m_EditorClassIdentifier: 
-  myItems: []
+  price: 0
+  isEquiped: 0
+  image: {fileID: 0}
+  _id: 0
+  _name: 
+  _tooltip: 
+  _iconSprite: {fileID: 0}
+  _maxAmount: 99
+  _value: 0

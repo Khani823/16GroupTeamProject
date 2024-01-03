@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class ItemSlot : MonoBehaviour
 {
     [HideInInspector]public ItemData inputData;
+    public GameObject popup;
     public PopupEquip popupEquip;
     public Image itemImage;
     public GameObject EquipMark;
@@ -13,7 +14,7 @@ public class ItemSlot : MonoBehaviour
     public void Init(ItemData data)
     {
         inputData = data;
-        itemImage.sprite = data.image;
+        itemImage.sprite = data._iconSprite;
         itemImage.enabled = true;
 
         ChangeEquip();
@@ -31,6 +32,10 @@ public class ItemSlot : MonoBehaviour
     }
     public void Popup()
     {
-        popupEquip.PopupSetting(this);
+        if(inputData != null)
+        {
+            popup.SetActive(true);
+            popupEquip.PopupSetting(this);
+        }       
     }
 }
