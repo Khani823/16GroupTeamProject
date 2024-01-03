@@ -12,12 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b597242af57330945a22e8bf03013df0, type: 3}
   m_Name: Item_Portion blue
   m_EditorClassIdentifier: 
-  price: 0
+  price: 100
   isEquiped: 0
-  image: {fileID: 0}
-  _id: 0
-  _name: 
-  _tooltip: 
-  _iconSprite: {fileID: 0}
+  _id: 10001
+  _name: "\uD30C\uB780 \uD3EC\uC158"
+  _tooltip: "\uB9C8\uB098\uB97C 50 \uD68C\uBCF5\uD569\uB2C8\uB2E4."
+  _iconSprite: {fileID: 3024413351725788185, guid: 234ac5994eba3364db58a97dda7c83a9, type: 3}
   _maxAmount: 99
-  _value: 0
+  _value: 50

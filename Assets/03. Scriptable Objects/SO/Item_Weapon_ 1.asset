@@ -14,10 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   price: 0
   isEquiped: 0
-  image: {fileID: 0}
   _id: 0
   _name: 
   _tooltip: 
-  _iconSprite: {fileID: 0}
+  _iconSprite: {fileID: 21300000, guid: bb1bdd56c1352fb419836f9c2b0bf4bf, type: 3}
   _maxDurability: 100
   _damage: 1

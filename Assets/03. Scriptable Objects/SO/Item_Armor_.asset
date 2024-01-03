@@ -12,12 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b50f428ada62c3a40b63fb5674b59ee3, type: 3}
   m_Name: Item_Armor_
   m_EditorClassIdentifier: 
-  price: 0
+  price: 1500
   isEquiped: 0
-  image: {fileID: 0}
-  _id: 0
+  _id: 20002
   _name: 
-  _tooltip: 
-  _iconSprite: {fileID: 0}
+  _tooltip: "\uBC29\uC5B4\uB825\uC744 \uC62C\uB824\uC90D\uB2C8\uB2E4"
+  _iconSprite: {fileID: 21300000, guid: a1f270ff46445564e9afa40d0d9574db, type: 3}
   _maxDurability: 100
-  _defence: 1
+  _defence: 50
