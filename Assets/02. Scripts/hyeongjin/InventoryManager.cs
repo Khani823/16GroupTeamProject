@@ -14,9 +14,6 @@ public class InventoryManager : MonoBehaviour
 
     public List<SlotClass> items = new List<SlotClass>();
     private GameObject[] slots;
-    public GameObject popup;
-    public PopupEquip popupEquip;
-    public ItemSlot itemslot;
 
     public void Start()
     {
@@ -43,6 +40,7 @@ public class InventoryManager : MonoBehaviour
                 //currentIconImage.transform.GetComponent<Image>().sprite = items[i].GetItem().itemIcon;
                 slots[i].transform.GetChild(0).GetComponent<Image>().sprite = items[i].GetItem().itemIcon;
                 slots[i].transform.GetChild(0).GetComponent<Image>().enabled = true;
+                slots[i].GetComponent<ItemSlot>().index = i;
                 if (items[i].GetItem().isStackable)
                 {
                     slots[i].transform.GetChild(1).GetComponent<Text>().text = items[i].GetQuantity() + "";
@@ -117,20 +115,24 @@ public class InventoryManager : MonoBehaviour
         RefreshUI();
         return true;
     }
-    public void EquipPopup(ItemClass item)
-    {
-        SlotClass slot = Contains(item);
-        if (slot != null && slot.GetItem().isStackable == false)
-        {
-            Debug.Log("success");
-            popup.SetActive(true);
-            popupEquip.PopupSetting(itemslot);
-        }
-        else
-        {
-            Debug.Log("Failed");
-        }
-    }
+    //public void EquipPopup(ItemClass item)
+    //{
+    //    SlotClass slot = Contains(item);
+    //    if (slot != null && slot.GetItem().isStackable == false)
+    //    {
+    //        Debug.Log("success");
+    //        popup.SetActive(true);
+    //        popupEquip.PopupSetting(itemslot);
+    //    }
+    //    else if(slot != null && slot.GetItem().isStackable)
+    //    {
+    //        Debug.Log("¹°¾à");
+    //    }
+    //    else
+    //    {
+    //        Debug.Log("Failed");
+    //    }
+    //}
 
     public SlotClass Contains(ItemClass item)
     {
