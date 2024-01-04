@@ -31,6 +31,15 @@ public abstract class WeaponAttack : MonoBehaviour
     private void OnMovePerformed(InputAction.CallbackContext context)
     {
         Vector2 moveInput = context.ReadValue<Vector2>();
+
+        if (Mathf.Abs(moveInput.x) > Mathf.Abs(moveInput.y))
+        {
+            moveInput = new Vector2(moveInput.x, 0);
+        }
+        else
+        {
+            moveInput = new Vector2(0, moveInput.y);
+        }
         UpdateDirection(moveInput.normalized);
     }
 
