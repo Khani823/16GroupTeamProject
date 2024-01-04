@@ -30,12 +30,13 @@ public class UiManager : MonoBehaviour
         {
             if(curHp > 0)
             {
-                curHp -= 10;
+                curHp -= 1;
             }
             else
             {
                 curHp = 0;
             }
+            imsi = (float) curHp / (float)maxHp;
         }
 
         HandleHp();
@@ -48,7 +49,7 @@ public class UiManager : MonoBehaviour
 
     private void HandleHp()
     {
-        hpbar.value = Mathf.Lerp(hpbar.value, (float)curHp / (float)maxHp, Time.deltaTime * 10);
+        hpbar.value = Mathf.Lerp(hpbar.value, imsi, Time.deltaTime * 1);
     }
     
 }
