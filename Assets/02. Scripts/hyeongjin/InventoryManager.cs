@@ -4,6 +4,7 @@ using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+using static UnityEditor.Progress;
 
 public class InventoryManager : MonoBehaviour
 {
@@ -13,6 +14,9 @@ public class InventoryManager : MonoBehaviour
 
     public List<SlotClass> items = new List<SlotClass>();
     private GameObject[] slots;
+    public GameObject popup;
+    public PopupEquip popupEquip;
+    public ItemSlot itemslot;
 
     public void Start()
     {
@@ -112,6 +116,20 @@ public class InventoryManager : MonoBehaviour
 
         RefreshUI();
         return true;
+    }
+    public void EquipPopup(ItemClass item)
+    {
+        SlotClass slot = Contains(item);
+        if (slot != null && slot.GetItem().isStackable == false)
+        {
+            Debug.Log("success");
+            popup.SetActive(true);
+            popupEquip.PopupSetting(itemslot);
+        }
+        else
+        {
+            Debug.Log("Failed");
+        }
     }
 
     public SlotClass Contains(ItemClass item)

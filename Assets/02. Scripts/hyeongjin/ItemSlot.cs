@@ -6,36 +6,37 @@ using UnityEngine.UI;
 public class ItemSlot : MonoBehaviour
 {
     [HideInInspector]public ItemData inputData;
-    public GameObject popup;
-    public PopupEquip popupEquip;
+    [HideInInspector]public SlotClass slotClass;
+    public InventoryManager inventoryManager;
     public Image itemImage;
     public GameObject EquipMark;
-    // Start is called before the first frame update
-    public void Init(ItemData data)
-    {
-        inputData = data;
-        itemImage.sprite = data._iconSprite;
-        itemImage.enabled = true;
+    private ItemClass item;
 
-        ChangeEquip();
-    }
+
+    // Start is called before the first frame update
+    //public void Init(ItemData data)
+    //{
+    //    inputData = data;
+    //    itemImage.sprite = data._iconSprite;
+    //    itemImage.enabled = true;
+
+    //    ChangeEquip();
+    //}
     public void ChangeEquip()
     {
         if (inputData.isEquiped)
         {
             EquipMark.SetActive(true);
+            Debug.Log("ÄÑÁü");
         }
         else
         {
             EquipMark.SetActive(false);
+            Debug.Log("²¨Áü");
         }
     }
     public void Popup()
     {
-        if(inputData != null)
-        {
-            popup.SetActive(true);
-            popupEquip.PopupSetting(this);
-        }       
+        inventoryManager.EquipPopup(inventoryManager.items[1].GetItem());
     }
 }

@@ -214,7 +214,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 0
+  m_Text: 
 --- !u!1 &2954290675888806041
 GameObject:
   m_ObjectHideFlags: 0
@@ -521,8 +521,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputData: {fileID: 11400000, guid: 8b176ac7e6a8d324c8b882a5e1c4b5c4, type: 2}
-  popup: {fileID: 0}
-  popupEquip: {fileID: 0}
+  slotClass:
+    item: {fileID: 0}
+    quantity: 0
+  inventoryManager: {fileID: 0}
   itemImage: {fileID: 5703889911411532148}
   EquipMark: {fileID: 7210916274245402940}
 --- !u!114 &859099814312814666

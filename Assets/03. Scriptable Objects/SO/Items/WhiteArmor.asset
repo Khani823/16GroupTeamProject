@@ -15,4 +15,5 @@ MonoBehaviour:
   itemName: WhiteArmor
   itemIcon: {fileID: 21300000, guid: a1f270ff46445564e9afa40d0d9574db, type: 3}
   price: 0
+  isStackable: 0
   defense: 0
