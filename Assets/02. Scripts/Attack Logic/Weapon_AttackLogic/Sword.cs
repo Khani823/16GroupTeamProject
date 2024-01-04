@@ -6,34 +6,6 @@ using UnityEngine.UIElements;
 
 public class Sword : WeaponAttack
 {
-    
-
-    //private void Start()
-    //{
-    //    TestController.OnDirectionChange += UpdateDirection;
-    //}
-
-    //private void OnDestroy()
-    //{
-    //    TestController.OnDirectionChange -= UpdateDirection;
-    //}
-
-    //private void UpdateDirection(Vector2 newDirection)
-    //{
-    //    ClearRangeBoxes();
-    //    lookDirection = newDirection;
-    //    ShowAttackRange(lookDirection);
-    //}
-
-    //private void ClearRangeBoxes()
-    //{
-    //    foreach (var rangeBox in rangeBoxes)
-    //    {
-    //        Destroy(rangeBox);
-    //    }
-    //    rangeBoxes.Clear();
-    //}
-
     public override void Attack(Vector2 direction)
     {
         CheckAttackRange(direction);

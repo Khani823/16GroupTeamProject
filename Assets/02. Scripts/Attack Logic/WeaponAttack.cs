@@ -63,7 +63,7 @@ public abstract class WeaponAttack : MonoBehaviour
     }
     public abstract void ShowAttackRange(Vector2 direction);
 
-    protected void ClearRangeBoxes()
+    public void ClearRangeBoxes()
     {
         foreach (var box in rangeBoxes)
         {
