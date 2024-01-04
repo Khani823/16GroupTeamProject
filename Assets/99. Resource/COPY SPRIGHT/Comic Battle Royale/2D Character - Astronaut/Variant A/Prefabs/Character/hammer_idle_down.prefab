@@ -262,6 +262,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5987468569922629880}
   - component: {fileID: 5987468569922629881}
+  - component: {fileID: -1008568694468083187}
   m_Layer: 0
   m_Name: hammer_idle_down
   m_TagString: Untagged
@@ -339,3 +340,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &-1008568694468083187
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5987468569922630406}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9006d9bfafe474c068aee74a69934e5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  range: 0
+  targetlayer:
+    serializedVersion: 2
+    m_Bits: 0
+  lookDirection: {x: 0, y: 0}
+  rangeBox: {fileID: 7637109694579291665, guid: 138c28b863658419592e7fa3e5627573, type: 3}

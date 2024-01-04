@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public abstract class WeaponAttack : MonoBehaviour
 {
@@ -9,11 +10,31 @@ public abstract class WeaponAttack : MonoBehaviour
     public Vector2 lookDirection;
     public GameObject rangeBox;
     protected List<GameObject> rangeBoxes = new List<GameObject>();
+    private PlayerController2D directionToLook; 
 
-    protected virtual void Start()
+    protected virtual void Awake()
     {
-        TestController.OnDirectionChange += UpdateDirection;
+        directionToLook = new PlayerController2D();
+        directionToLook.Player.Move.performed += OnMovePerformed; // 구독
+        directionToLook.Player.Move.canceled += OnMoveCanceled; // 구독 해제
     }
+
+    protected void OnEnable()
+    {
+        directionToLook.Enable();
+    }
+    protected void OnDisable()
+    {
+        directionToLook.Disable();
+    }
+
+    private void OnMovePerformed(InputAction.CallbackContext context)
+    {
+        Vector2 moveInput = context.ReadValue<Vector2>();
+        UpdateDirection(moveInput.normalized);
+    }
+
+    private void OnMoveCanceled(InputAction.CallbackContext context) { }
 
     protected void UpdateDirection(Vector2 newDirection)
     {
@@ -22,12 +43,25 @@ public abstract class WeaponAttack : MonoBehaviour
         ShowAttackRange(lookDirection);
     }
 
-    public abstract void Attack();
-
-    protected virtual void ShowAttackRange(Vector2 direction)
+    public virtual void Attack(Vector2 direction)
     {
-        // 공격 범위 표시 로직 구현
+        CheckAttackRange(direction);
+        ClearRangeBoxes();
     }
+
+    protected void CheckAttackRange(Vector2 direction)
+    {
+        Vector2 position = transform.position;
+        RaycastHit2D[] hits = Physics2D.RaycastAll(position, direction, range, targetlayer);  
+        foreach (RaycastHit2D hit in hits)
+        { 
+	        if(hit.collider != null)
+            {
+                Debug.Log("맞았습니다! 대ㅔ: " + hit.collider.gameObject.name);
+            }
+		}
+    }
+    public abstract void ShowAttackRange(Vector2 direction);
 
     protected void ClearRangeBoxes()
     {
@@ -37,6 +71,14 @@ public abstract class WeaponAttack : MonoBehaviour
         }
         rangeBoxes.Clear();
     }
+    protected virtual void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        DrawAttackRay(lookDirection);
+    }
 
-    // 기타 공통 메서드...
+    protected void DrawAttackRay(Vector2 direction)
+    {
+        Gizmos.DrawLine(transform.position, (Vector2)transform.position + direction * range);
+    }
 }
