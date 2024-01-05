@@ -7,6 +7,7 @@ public class ClickMove : MonoBehaviour
 {
     NavMeshAgent agent;
 
+
     private void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
@@ -16,6 +17,8 @@ public class ClickMove : MonoBehaviour
 
     void Update()
     {
+        
+
         if (Input.GetMouseButtonDown(0))
         {
             Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -25,9 +28,13 @@ public class ClickMove : MonoBehaviour
 
             if (hit2d.collider != null && hit2d.collider.CompareTag("Ground"))
             {
+
                 // 네비게이션 메시 에이전트의 목적지 설정
                 agent.SetDestination(hit2d.point);
+
+
             }
         }
+        
     }
 }
