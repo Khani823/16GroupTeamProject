@@ -1,11 +1,13 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class PlayerInputController : CharacterController
 {
+    public GameObject Menu;
     private Camera _camera;
     private Animator _animator;
     private Vector2 moveInput;
@@ -64,6 +66,10 @@ public class PlayerInputController : CharacterController
         {
             CallLookEvent(newAim);
         }
+    }
+    public void OnInventory()
+    {
+        Menu.SetActive(true);
     }
     //public void OnMouseMove(InputValue value)
     //{

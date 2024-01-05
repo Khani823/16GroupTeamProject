@@ -13,6 +13,6 @@ using UnityEngine;
         [SerializeField] private float _value;
         public override Item CreateItem()
         {
-            return new PotionItem(this);
+            return new PortionItem(this);
         }
     }
