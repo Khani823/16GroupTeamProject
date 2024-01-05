@@ -10,17 +10,20 @@ public class UiManager : MonoBehaviour
     public Text HPText;
     public Text MPText;
     public Text EXPText;
+    public Text ATTText;
+    public Text DEFText;
 
     public GameObject xpBar;
     public GameObject hpBar;
     public GameObject mpBar;
 
-    // 레벨, 경험치, 마나 설정
     int level = 1;
     int HP = 100;
     int MP = 100;    
     int exp = 0;
     int maxexp = 100;
+    int Att = 10;
+    int Def = 10;
     
     float maxHp = 100f;
     float curHp;
@@ -34,11 +37,6 @@ public class UiManager : MonoBehaviour
         curHp = maxHp;
         curMP = maxMP;
         UpdateText();
-    }
-
-    void Update()
-    {
-
     }
 
     // 플레이어가 공격당할 때 호출되는 메서드
@@ -103,6 +101,8 @@ public class UiManager : MonoBehaviour
         HPText.text = HP.ToString();
         MPText.text = MP.ToString();
         EXPText.text = exp.ToString();
+        ATTText.text = "공격력: " + CalculateAtt().ToString();
+        DEFText.text = "방어력: " + CalculateDef().ToString();
     }
 
     void UpdateMpBar()
@@ -124,5 +124,15 @@ public class UiManager : MonoBehaviour
         // 경험치 바 UI 업데이트
         float fillAmount = (float)exp / maxexp;
         xpBar.GetComponent<Image>().fillAmount = fillAmount;
+    }
+
+    int CalculateAtt()
+    {
+        return level * 2;
+    }
+
+    int CalculateDef()
+    {
+        return level * 2;
     }
 }
