@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class PlayerInputController : CharacterController
 {
+    public GameObject Menu;
     private Camera _camera;
     private void Awake()
     {
@@ -27,6 +29,10 @@ public class PlayerInputController : CharacterController
         {
             CallLookEvent(newAim);
         }
+    }
+    public void OnInventory()
+    {
+        Menu.SetActive(true);
     }
     //public void OnMouseMove(InputValue value)
     //{

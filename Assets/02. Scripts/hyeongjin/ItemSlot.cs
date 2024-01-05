@@ -84,8 +84,6 @@ public class ItemSlot : MonoBehaviour, IPointerExitHandler, IPointerEnterHandler
     }
     public void OnPointerEnter(PointerEventData eventData)
     {
-        
-
         if (iconimage.sprite != null)
         {
             tooltip.gameObject.SetActive(true);
@@ -96,5 +94,7 @@ public class ItemSlot : MonoBehaviour, IPointerExitHandler, IPointerEnterHandler
     public void OnPointerExit(PointerEventData eventData)
     {
         tooltip.gameObject.SetActive(false);
+        
     }
+
 }
