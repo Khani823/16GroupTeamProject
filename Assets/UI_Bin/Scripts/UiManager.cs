@@ -6,55 +6,122 @@ using UnityEngine.UI;
 
 public class UiManager : MonoBehaviour
 {
-    //Text[] txt;
-    [SerializeField]
-    private Slider hpbar;
+    public Text levelText;
+    public Text HPText;
+    public Text MPText;
+    public Text EXPText;
+    public GameObject xpBar;
+    public GameObject hpBar;
+    public GameObject mpBar;
 
-    private float maxHp = 100;
-    private float curHp = 100;
+    // 레벨, 경험치, 마나 설정
+    int level = 1;
+    int HP = 100;
+    int MP = 100;    
+    int exp = 0;
+    int maxexp = 100;
+    
+    private float maxHp = 100f;
+    private float curHp;
+    public float maxMP = 100f;
+    private float curMP;
+
     float imsi;
 
     void Start()
     {
-        hpbar.value = (float) curHp / (float) maxHp;
-
-        //for(int i = 0; i < txt.Length; i++)
-        //{
-        //    txt[i].text = KeySetting.keys[(KeyAction)i].ToString();
-        //}        
+        curHp = maxHp;
+        curMP = maxMP;
+        UpdateText();
     }
-        
+
     void Update()
-    {        
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            // 체력이 0보다 크면
-            if (curHp > 0)
-            {
-                // 체력 1씩 감소
-                curHp -= 1;
-            }
-            else
-            {
-                // 체력이 0이면 그대로 유지
-                curHp = 0;
-            }
-            // 체력 비율 계산 및 저장
-            imsi = (float) curHp / (float)maxHp;
-        }
-        // 체력을 처리하는 메서드 호출
-        HandleHp();
-
-        //for (int i = 0; i < txt.Length; i++)
-        //{
-        //    txt[i].text = KeySetting.keys[(KeyAction)i].ToString();
-        //}
-    }
-
-    private void HandleHp()
     {
-        // 체력바가 부드럽게 줄어들게 해줌
-        hpbar.value = Mathf.Lerp(hpbar.value, imsi, Time.deltaTime * 1);
+
     }
-    
+
+    // 플레이어가 공격당할 때 호출되는 메서드
+    public void TakeDamage(float damageAmount)
+    {
+        curHp -= damageAmount;
+        UpdateHpBar();
+        
+        if (curHp <= 0)
+        {
+            Debug.Log("죽음");
+        }
+    }
+
+    // 스킬을 사용할 때 호출되는 메서드
+    public void UseSkill(float mpCost)
+    {
+        if (curMP >= mpCost)
+        {
+            curMP -= mpCost;
+            UpdateMpBar();
+            
+            Debug.Log("스킬 사용!");
+        }
+        else
+        {
+            Debug.Log("MP 부족");
+        }
+    }
+
+    // 킬이 일어났을 때 호출되는 메서드
+    public void GainExperience(int xp)
+    {
+        exp += xp;
+
+        // 레벨 업이 가능하면 업!!        
+        if (exp >= maxexp)
+        {
+            LevelUp();
+        }
+
+        UpdateExpBar();
+    }
+
+    void LevelUp()
+    {
+        level++;
+        exp = 0;
+
+        // 레벨업 후 경험치량 증가
+        maxexp += 10;
+        HP += 10;
+        MP += 10;
+
+        UpdateExpBar();
+        UpdateText();
+    }
+
+    void UpdateText()
+    {
+        levelText.text = "Lv: " + level.ToString();
+        HPText.text = HP.ToString();
+        MPText.text = MP.ToString();
+        EXPText.text = exp.ToString();
+    }
+
+    void UpdateMpBar()
+    {
+        // MpBar 업데이트
+        float mpPercentage = curMP / maxMP;
+        mpBar.GetComponent<Image>().fillAmount = mpPercentage;
+    }
+
+
+    void UpdateHpBar()
+    {
+        // HP바 업데이트
+        float hpPercentage = curHp / maxHp;
+        hpBar.GetComponent<Image>().fillAmount = hpPercentage;
+    }
+    void UpdateExpBar()
+    {
+        // 경험치 바 UI 업데이트
+        float fillAmount = (float)exp / maxexp;
+        xpBar.GetComponent<Image>().fillAmount = fillAmount;
+    }
 }
