@@ -83,7 +83,7 @@ namespace Rito.InventorySystem
         /***********************************************************************
         *                               Public Methods
         ***********************************************************************/
-        #region .
+        
         /// <summary> 툴팁 UI에 아이템 정보 등록 </summary>
         public void SetItemInfo(ItemClass item)
         {
@@ -142,6 +142,14 @@ namespace Rito.InventorySystem
 
         public void Hide() => gameObject.SetActive(false);
 
-        #endregion
+        public void SetupTooltip(string name, string description)
+        {
+            _titleText.text = name;
+            _contentText.text = description;
+        }
+        private void Update()
+        {
+            transform.position = Input.mousePosition;
+        }
     }
 }

@@ -220,6 +220,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1775872423}
     - target: {fileID: 6587343843291549974, guid: 0c48a0e600b3486488400b83426594e7, type: 3}
+      propertyPath: tooltip
+      value: 
+      objectReference: {fileID: 1906978837}
+    - target: {fileID: 6587343843291549974, guid: 0c48a0e600b3486488400b83426594e7, type: 3}
       propertyPath: itemslot
       value: 
       objectReference: {fileID: 136818311}
@@ -353,6 +357,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1775872423}
     - target: {fileID: 6587343843291549974, guid: 0c48a0e600b3486488400b83426594e7, type: 3}
+      propertyPath: tooltip
+      value: 
+      objectReference: {fileID: 1906978837}
+    - target: {fileID: 6587343843291549974, guid: 0c48a0e600b3486488400b83426594e7, type: 3}
       propertyPath: itemslot
       value: 
       objectReference: {fileID: 1705005032}
@@ -469,6 +477,10 @@ PrefabInstance:
       propertyPath: popup
       value: 
       objectReference: {fileID: 1775872423}
+    - target: {fileID: 6587343843291549974, guid: 0c48a0e600b3486488400b83426594e7, type: 3}
+      propertyPath: tooltip
+      value: 
+      objectReference: {fileID: 1906978837}
     - target: {fileID: 6587343843291549974, guid: 0c48a0e600b3486488400b83426594e7, type: 3}
       propertyPath: itemslot
       value: 
@@ -644,6 +656,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1137634356}
+  - {fileID: 1906978836}
   - {fileID: 2060589955}
   m_Father: {fileID: 1526912749}
   m_RootOrder: -1
@@ -933,6 +946,7 @@ GameObject:
   - component: {fileID: 399342878}
   - component: {fileID: 399342880}
   - component: {fileID: 399342879}
+  - component: {fileID: 399342881}
   m_Layer: 5
   m_Name: Inventory
   m_TagString: Untagged
@@ -999,6 +1013,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 399342877}
   m_CullTransparentMesh: 1
+--- !u!114 &399342881
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 399342877}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7cd8fb76580405d4595f7d18ebf8854c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _itemTooltip: {fileID: 0}
+  _inventoryManager: {fileID: 782694485}
+  _showHighlight: 1
+  _showTooltip: 1
 --- !u!1001 &449806590
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1095,6 +1125,10 @@ PrefabInstance:
       propertyPath: popup
       value: 
       objectReference: {fileID: 1775872423}
+    - target: {fileID: 6587343843291549974, guid: 0c48a0e600b3486488400b83426594e7, type: 3}
+      propertyPath: tooltip
+      value: 
+      objectReference: {fileID: 1906978837}
     - target: {fileID: 6587343843291549974, guid: 0c48a0e600b3486488400b83426594e7, type: 3}
       propertyPath: itemslot
       value: 
@@ -1228,6 +1262,10 @@ PrefabInstance:
       propertyPath: popup
       value: 
       objectReference: {fileID: 1775872423}
+    - target: {fileID: 6587343843291549974, guid: 0c48a0e600b3486488400b83426594e7, type: 3}
+      propertyPath: tooltip
+      value: 
+      objectReference: {fileID: 1906978837}
     - target: {fileID: 6587343843291549974, guid: 0c48a0e600b3486488400b83426594e7, type: 3}
       propertyPath: itemslot
       value: 
@@ -1676,6 +1714,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1775872423}
     - target: {fileID: 6587343843291549974, guid: 0c48a0e600b3486488400b83426594e7, type: 3}
+      propertyPath: tooltip
+      value: 
+      objectReference: {fileID: 1906978837}
+    - target: {fileID: 6587343843291549974, guid: 0c48a0e600b3486488400b83426594e7, type: 3}
       propertyPath: itemslot
       value: 
       objectReference: {fileID: 1749488583}
@@ -1997,6 +2039,10 @@ PrefabInstance:
       propertyPath: popup
       value: 
       objectReference: {fileID: 1775872423}
+    - target: {fileID: 6587343843291549974, guid: 0c48a0e600b3486488400b83426594e7, type: 3}
+      propertyPath: tooltip
+      value: 
+      objectReference: {fileID: 1906978837}
     - target: {fileID: 6587343843291549974, guid: 0c48a0e600b3486488400b83426594e7, type: 3}
       propertyPath: itemslot
       value: 
@@ -2426,6 +2472,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1775872423}
     - target: {fileID: 6587343843291549974, guid: 0c48a0e600b3486488400b83426594e7, type: 3}
+      propertyPath: tooltip
+      value: 
+      objectReference: {fileID: 1906978837}
+    - target: {fileID: 6587343843291549974, guid: 0c48a0e600b3486488400b83426594e7, type: 3}
       propertyPath: itemslot
       value: 
       objectReference: {fileID: 815494486}
@@ -2620,6 +2670,10 @@ PrefabInstance:
       propertyPath: popup
       value: 
       objectReference: {fileID: 1775872423}
+    - target: {fileID: 6587343843291549974, guid: 0c48a0e600b3486488400b83426594e7, type: 3}
+      propertyPath: tooltip
+      value: 
+      objectReference: {fileID: 1906978837}
     - target: {fileID: 6587343843291549974, guid: 0c48a0e600b3486488400b83426594e7, type: 3}
       propertyPath: itemslot
       value: 
@@ -2889,6 +2943,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1775872423}
     - target: {fileID: 6587343843291549974, guid: 0c48a0e600b3486488400b83426594e7, type: 3}
+      propertyPath: tooltip
+      value: 
+      objectReference: {fileID: 1906978837}
+    - target: {fileID: 6587343843291549974, guid: 0c48a0e600b3486488400b83426594e7, type: 3}
       propertyPath: itemslot
       value: 
       objectReference: {fileID: 1522265858}
@@ -3036,7 +3094,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 238472844}
-  - {fileID: 1906978836}
   - {fileID: 1775872424}
   m_Father: {fileID: 0}
   m_RootOrder: 1
@@ -3142,6 +3199,10 @@ PrefabInstance:
       propertyPath: popup
       value: 
       objectReference: {fileID: 1775872423}
+    - target: {fileID: 6587343843291549974, guid: 0c48a0e600b3486488400b83426594e7, type: 3}
+      propertyPath: tooltip
+      value: 
+      objectReference: {fileID: 1906978837}
     - target: {fileID: 6587343843291549974, guid: 0c48a0e600b3486488400b83426594e7, type: 3}
       propertyPath: itemslot
       value: 
@@ -3352,6 +3413,10 @@ PrefabInstance:
       propertyPath: popup
       value: 
       objectReference: {fileID: 1775872423}
+    - target: {fileID: 6587343843291549974, guid: 0c48a0e600b3486488400b83426594e7, type: 3}
+      propertyPath: tooltip
+      value: 
+      objectReference: {fileID: 1906978837}
     - target: {fileID: 6587343843291549974, guid: 0c48a0e600b3486488400b83426594e7, type: 3}
       propertyPath: itemslot
       value: 
@@ -3603,6 +3668,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 770724947}
     m_Modifications:
+    - target: {fileID: 859099814312814666, guid: 0c48a0e600b3486488400b83426594e7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 859099814312814666, guid: 0c48a0e600b3486488400b83426594e7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 859099814312814666, guid: 0c48a0e600b3486488400b83426594e7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 859099814312814666, guid: 0c48a0e600b3486488400b83426594e7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: ItemSlot, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 859099814312814666, guid: 0c48a0e600b3486488400b83426594e7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2635925674401514903, guid: 0c48a0e600b3486488400b83426594e7, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -3691,6 +3776,10 @@ PrefabInstance:
       propertyPath: popup
       value: 
       objectReference: {fileID: 1775872423}
+    - target: {fileID: 6587343843291549974, guid: 0c48a0e600b3486488400b83426594e7, type: 3}
+      propertyPath: tooltip
+      value: 
+      objectReference: {fileID: 1906978837}
     - target: {fileID: 6587343843291549974, guid: 0c48a0e600b3486488400b83426594e7, type: 3}
       propertyPath: itemslot
       value: 
@@ -3856,8 +3945,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1906978836}
   - component: {fileID: 1906978837}
+  - component: {fileID: 1906978838}
   m_Layer: 5
-  m_Name: InventoryPopup
+  m_Name: InventoryTooltip
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3870,13 +3960,13 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1906978835}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1479009242}
-  m_Father: {fileID: 1526912749}
+  m_Father: {fileID: 238472844}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -3893,12 +3983,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 1906978835}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7cd8fb76580405d4595f7d18ebf8854c, type: 3}
+  m_Script: {fileID: 11500000, guid: 320c70249d053c44cb519b4435456ed3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _itemTooltip: {fileID: 0}
-  _showHighlight: 1
-  _showTooltip: 1
+  _titleText: {fileID: 962511618}
+  _contentText: {fileID: 1777937171}
+--- !u!225 &1906978838
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1906978835}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
 --- !u!1 &1908961832
 GameObject:
   m_ObjectHideFlags: 0
@@ -4288,6 +4389,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1775872423}
     - target: {fileID: 6587343843291549974, guid: 0c48a0e600b3486488400b83426594e7, type: 3}
+      propertyPath: tooltip
+      value: 
+      objectReference: {fileID: 1906978837}
+    - target: {fileID: 6587343843291549974, guid: 0c48a0e600b3486488400b83426594e7, type: 3}
       propertyPath: itemslot
       value: 
       objectReference: {fileID: 503238452}
@@ -4404,6 +4509,10 @@ PrefabInstance:
       propertyPath: popup
       value: 
       objectReference: {fileID: 1775872423}
+    - target: {fileID: 6587343843291549974, guid: 0c48a0e600b3486488400b83426594e7, type: 3}
+      propertyPath: tooltip
+      value: 
+      objectReference: {fileID: 1906978837}
     - target: {fileID: 6587343843291549974, guid: 0c48a0e600b3486488400b83426594e7, type: 3}
       propertyPath: itemslot
       value: 

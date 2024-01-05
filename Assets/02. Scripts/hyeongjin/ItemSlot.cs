@@ -3,8 +3,11 @@ using System.Collections.Generic;
 using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
-public class ItemSlot : MonoBehaviour
+using Rito.InventorySystem;
+
+public class ItemSlot : MonoBehaviour, IPointerExitHandler, IPointerEnterHandler
 {
     [HideInInspector]public ItemData inputData;
     [HideInInspector]public SlotClass slotClass; 
@@ -17,6 +20,7 @@ public class ItemSlot : MonoBehaviour
     public ItemSlot itemslot;
     public GameObject popup;
     public PopupEquip popupEquip;
+    public ItemTooltipUI tooltip;
     public int index;
     public RectTransform SlotRect => _slotRect;
     private RectTransform _slotRect;
@@ -77,5 +81,20 @@ public class ItemSlot : MonoBehaviour
         {
             return;
         }
+    }
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        
+
+        if (iconimage.sprite != null)
+        {
+            tooltip.gameObject.SetActive(true);
+            tooltip.SetupTooltip(inventoryManager.items[index].GetItem().itemName, inventoryManager.items[index].GetItem().tooltip);
+        }
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        tooltip.gameObject.SetActive(false);
     }
 }

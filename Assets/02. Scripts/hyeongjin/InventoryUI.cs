@@ -47,7 +47,7 @@ public class InventoryUI : MonoBehaviour
         _ped.position = Input.mousePosition;
 
 
-        if (_showTooltip) ShowOrHideItemTooltip(_inventoryManager.items[1].GetItem());
+        //if (_showTooltip) ShowOrHideItemTooltip(_inventoryManager.items[1].GetItem());
 
     }
     private T RaycastAndGetFirstComponent<T>() where T : Component
@@ -104,23 +104,6 @@ public class InventoryUI : MonoBehaviour
     //    }
     //}
 
-
-    private void ShowOrHideItemTooltip(ItemClass item)
-    {
-        SlotClass slot = _inventoryManager.Contains(item);
-        // 마우스가 유효한 아이템 아이콘 위에 올라와 있다면 툴팁 보여주기
-        if (slot != null)
-        {
-            _itemTooltip.Hide();
-        }
-        else
-        {
-
-            UpdateTooltipUI(itemslot);
-            _itemTooltip.Show();
-        }
-        Debug.Log(slot);
-    }
 
     //private void ShowOrHideItemTooltip()
     //{
