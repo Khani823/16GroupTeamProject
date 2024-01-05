@@ -101,8 +101,8 @@ public class UiManager : MonoBehaviour
         HPText.text = HP.ToString();
         MPText.text = MP.ToString();
         EXPText.text = exp.ToString();
-        ATTText.text = "공격력: " + CalculateAtt().ToString();
-        DEFText.text = "방어력: " + CalculateDef().ToString();
+        ATTText.text = CalculateAtt().ToString();
+        DEFText.text = CalculateDef().ToString();
     }
 
     void UpdateMpBar()
