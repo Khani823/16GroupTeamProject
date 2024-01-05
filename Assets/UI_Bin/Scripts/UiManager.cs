@@ -10,6 +10,7 @@ public class UiManager : MonoBehaviour
     public Text HPText;
     public Text MPText;
     public Text EXPText;
+
     public GameObject xpBar;
     public GameObject hpBar;
     public GameObject mpBar;
@@ -21,10 +22,10 @@ public class UiManager : MonoBehaviour
     int exp = 0;
     int maxexp = 100;
     
-    private float maxHp = 100f;
-    private float curHp;
-    public float maxMP = 100f;
-    private float curMP;
+    float maxHp = 100f;
+    float curHp;
+    float maxMP = 100f;
+    float curMP;
 
     float imsi;
 
