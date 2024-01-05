@@ -1,20 +1,45 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using System.Collections;
 
 public class Door : MonoBehaviour
 {
-    public bool isOpen = false;
+    public Vector3 closedPosition; // 문이 닫혔을 때의 위치
+    public Vector3 openPosition; // 문이 열렸을 때의 위치
+    public float speed = 2.0f; // 문이 움직이는 속도
+    public bool isOpen = false; // 문의 현재 상태
+
+    public void ToggleDoor()
+    {
+        if (isOpen)
+        {
+            CloseDoor();
+        }
+        else
+        {
+            OpenDoor();
+        }
+    }
 
     public void OpenDoor()
     {
+        StopAllCoroutines();
+        StartCoroutine(MoveDoor(openPosition));
         isOpen = true;
-        // 문 열리는 애니메이션 또는 시각적 변화 처리
     }
 
     public void CloseDoor()
     {
+        StopAllCoroutines();
+        StartCoroutine(MoveDoor(closedPosition));
         isOpen = false;
-        // 문 닫히는 애니메이션 또는 시각적 변화 처리
+    }
+
+    private IEnumerator MoveDoor(Vector3 targetPosition)
+    {
+        while (Vector3.Distance(transform.position, targetPosition) > 0.01f)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
+            yield return null;
+        }
     }
 }

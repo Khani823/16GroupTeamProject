@@ -5,9 +5,9 @@ using UnityEngine;
 
 
     /// <summary> 수량 아이템 - 포션 아이템 </summary>
-    public class PotionItem : CountableItem, IUsableItem
+    public class PortionItem : CountableItem, IUsableItem
     {
-        public PotionItem(PortionItemData data, int amount = 1) : base(data, amount) { }
+        public PortionItem(PortionItemData data, int amount = 1) : base(data, amount) { }
 
         public bool Use()
         {
@@ -19,6 +19,6 @@ using UnityEngine;
 
         protected override CountableItem Clone(int amount)
         {
-            return new PotionItem(CountableData as PortionItemData, amount);
+            return new PortionItem(CountableData as PortionItemData, amount);
         }
     }
