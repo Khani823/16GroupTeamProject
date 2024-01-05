@@ -8,6 +8,7 @@ public abstract class ItemClass : ScriptableObject
     public Sprite itemIcon;
     public float price;
     public bool isStackable = true;
+    [Multiline] public string tooltip;
 
     public abstract ItemClass GetItem();
     public abstract WeaponClass GetWeapon();

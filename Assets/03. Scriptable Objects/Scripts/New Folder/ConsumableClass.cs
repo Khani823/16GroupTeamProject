@@ -6,6 +6,7 @@ public class ConsumableClass : ItemClass
 {
     [Header("Consumable")]
     public float HealthAdded;
+    public float ManaAdded;
 
     public override ItemClass GetItem() { return this; }
     public override WeaponClass GetWeapon() { return null; }

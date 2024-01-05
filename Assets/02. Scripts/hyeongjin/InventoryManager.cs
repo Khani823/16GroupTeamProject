@@ -12,8 +12,11 @@ public class InventoryManager : MonoBehaviour
     [SerializeField] private ItemClass itemToAdd;
     [SerializeField] private ItemClass itemToRemove;
 
+
+
     public List<SlotClass> items = new List<SlotClass>();
     private GameObject[] slots;
+
 
     public void Start()
     {
@@ -115,24 +118,7 @@ public class InventoryManager : MonoBehaviour
         RefreshUI();
         return true;
     }
-    //public void EquipPopup(ItemClass item)
-    //{
-    //    SlotClass slot = Contains(item);
-    //    if (slot != null && slot.GetItem().isStackable == false)
-    //    {
-    //        Debug.Log("success");
-    //        popup.SetActive(true);
-    //        popupEquip.PopupSetting(itemslot);
-    //    }
-    //    else if(slot != null && slot.GetItem().isStackable)
-    //    {
-    //        Debug.Log("¹°¾à");
-    //    }
-    //    else
-    //    {
-    //        Debug.Log("Failed");
-    //    }
-    //}
+
 
     public SlotClass Contains(ItemClass item)
     {
@@ -143,4 +129,11 @@ public class InventoryManager : MonoBehaviour
         }
         return null;
     }
+
+    public void Consume(ItemClass item)
+    {
+        
+        Remove(item);
+    }
+
 }
