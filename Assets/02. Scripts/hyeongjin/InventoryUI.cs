@@ -62,71 +62,8 @@ public class InventoryUI : MonoBehaviour
         return _rrList[0].gameObject.GetComponent<T>();
     }
 
-    //private void OnPointerEnterAndExit()
-    //{
-    //    // 이전 프레임의 슬롯
-    //    var prevSlot = itemslot;
 
-    //    // 현재 프레임의 슬롯
-    //    var curSlot = itemslot = RaycastAndGetFirstComponent<ItemSlot>();
-
-    //    if (prevSlot == null)
-    //    {
-    //        // Enter
-    //        if (curSlot != null)
-    //        {
-    //            OnCurrentEnter();
-    //        }
-    //    }
-    //    else
-    //    {
-    //        // Exit
-    //        if (curSlot == null)
-    //        {
-    //            OnPrevExit();
-    //        }
-
-    //        // Change
-    //        else if (prevSlot != curSlot)
-    //        {
-    //            OnPrevExit();
-    //            OnCurrentEnter();
-    //        }
-    //    }
-    //    void OnCurrentEnter()
-    //    {
-    //        if (_showHighlight)
-    //            curSlot.Highlight(true);
-    //    }
-    //    void OnPrevExit()
-    //    {
-    //        prevSlot.Highlight(false);
-    //    }
-    //}
-
-
-    //private void ShowOrHideItemTooltip()
-    //{
-    //    // 마우스가 유효한 아이템 아이콘 위에 올라와 있다면 툴팁 보여주기
-    //    bool isValid =
-    //        itemslot != null && itemslot.HasItem && itemslot.IsAccessible;
-    //    if (isValid)
-    //    {
-    //        _itemTooltip.Hide();
-    //    }
-    //    else
-    //    {
-
-    //        UpdateTooltipUI(itemslot);
-    //        _itemTooltip.Show();
-    //    }
-    //    Debug.Log(itemslot);
-    //}
-
-
-
-
-    /// <summary> 툴팁 UI의 슬롯 데이터 갱신 </summary>
+    
     private void UpdateTooltipUI(ItemSlot slot)
         {
             // 툴팁 정보 갱신

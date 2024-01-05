@@ -9,10 +9,11 @@ public class PopupEquip : MonoBehaviour
     public ItemSlot slot;
     public TMP_Text infoText;
     public Button confirmBtn;
-
+    private ItemClass item;
 
     public void PopupSetting(ItemSlot slot)
     {
+
         if (slot.inputData.isEquiped)
         {
             infoText.text = "장착을 해제하시겠습니까?";

@@ -10,4 +10,5 @@ public class ArmorClass : ItemClass
     public override WeaponClass GetWeapon() { return null; }
     public override ArmorClass GetArmor() { return this; }
     public override ConsumableClass GetConsumable() { return null; }
+    public override KeyClass GetKey() { return null; }
 }

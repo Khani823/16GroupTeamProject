@@ -12,4 +12,5 @@ public class ConsumableClass : ItemClass
     public override WeaponClass GetWeapon() { return null; }
     public override ArmorClass GetArmor() { return null; }
     public override ConsumableClass GetConsumable() { return this; }
+    public override KeyClass GetKey() { return null; }
 }
