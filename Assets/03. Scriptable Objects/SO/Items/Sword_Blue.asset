@@ -18,4 +18,5 @@ MonoBehaviour:
   isStackable: 0
   tooltip: 
   type: 0
+  isEquiped: 0
   Damage: 0

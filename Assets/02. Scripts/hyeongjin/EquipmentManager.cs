@@ -6,7 +6,8 @@ using UnityEngine;
 public class EquipmentManager : MonoBehaviour
 {
     public static EquipmentManager Instance;
-    
+    public ItemSlot itemslot;
+
     public void Awake()
     {
         Instance = this;
@@ -23,12 +24,13 @@ public class EquipmentManager : MonoBehaviour
     public void Equip(ItemClass newitem)
     {
         int slotIndex = (int)newitem.type;
+        if (currentEquipment[slotIndex] != null )
+        {
+            UnEquip(currentEquipment[slotIndex]);
+        }
+        currentEquipment[slotIndex] = newitem;
 
-
-            currentEquipment[slotIndex] = newitem;
-        
-
-
+        //itemslot.ChangeEquip();
     }
 
     public void UnEquip(ItemClass olditem) 
@@ -36,17 +38,11 @@ public class EquipmentManager : MonoBehaviour
         int slotIndex = (int)olditem.type;
         if (currentEquipment[slotIndex] == olditem)
         {
-            if (currentEquipment[slotIndex] != null)
-            {
-                currentEquipment[slotIndex] = null;
-            }
-        }     
-    }
+            currentEquipment[slotIndex].isEquiped = false;
+            currentEquipment[slotIndex] = null;
+        }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        //itemslot.ChangeEquip();
     }
 
 }

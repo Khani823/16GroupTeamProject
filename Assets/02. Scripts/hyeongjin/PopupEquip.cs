@@ -14,6 +14,7 @@ public class PopupEquip : MonoBehaviour
     public EquipmentManager equipmentManager;
     public InventoryManager inventoryManager;
 
+
     public void PopupSetting(ItemSlot slot)
     {
 

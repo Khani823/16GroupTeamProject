@@ -30,7 +30,12 @@ public class InventoryManager : MonoBehaviour
         Add(itemToAdd);
         Remove(itemToRemove);
     }
-    
+
+    public void Update()
+    {
+        RefreshUI();
+    }
+
 
     public void RefreshUI()
     {
@@ -58,6 +63,7 @@ public class InventoryManager : MonoBehaviour
             //slots[i].transform.GetComponent<Image>().sprite = items[i].itemIcon;
             catch
             {
+                slots[i].GetComponent<ItemSlot>().item = null;
                 slots[i].transform.GetChild(0).GetComponent<Image>().sprite = null;
                 slots[i].transform.GetChild(0).GetComponent<Image>().enabled = false;
                 slots[i].transform.GetChild(1).GetComponent<Text>().text = "";

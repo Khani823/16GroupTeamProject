@@ -1811,14 +1811,14 @@ MonoBehaviour:
   itemToAdd: {fileID: 11400000, guid: 3394cc5a85a02fc41877cbaf131539e7, type: 2}
   itemToRemove: {fileID: 0}
   items:
-  - item: {fileID: 11400000, guid: 3394cc5a85a02fc41877cbaf131539e7, type: 2}
-    quantity: 1
   - item: {fileID: 11400000, guid: d82488bc848227a46904082a6c3cd7dd, type: 2}
     quantity: 1
   - item: {fileID: 11400000, guid: 1f423c5318b3fb741b1200c2d68bea2d, type: 2}
     quantity: 1
   - item: {fileID: 11400000, guid: db7d1cfcf488aa2429bd74cdf5222940, type: 2}
     quantity: 2
+  - item: {fileID: 11400000, guid: 3394cc5a85a02fc41877cbaf131539e7, type: 2}
+    quantity: 1
   - item: {fileID: 11400000, guid: 64612b0dcc0409940960ca3df367a27d, type: 2}
     quantity: 1
 --- !u!4 &782694486

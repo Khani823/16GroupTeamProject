@@ -6,6 +6,7 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
 using Rito.InventorySystem;
+using static UnityEditor.Progress;
 
 public class ItemSlot : MonoBehaviour, IPointerExitHandler, IPointerEnterHandler
 {
@@ -43,10 +44,13 @@ public class ItemSlot : MonoBehaviour, IPointerExitHandler, IPointerEnterHandler
     {
         iconimage = transform.Find("ItemIconImage").GetComponent<Image>();
         item = inventoryManager.items[index].GetItem();
+        item.isEquiped = false;
     }
+
+
     public void ChangeEquip()
     {
-        if (item.isEquiped)
+        if (item.isEquiped == true)
         {
             EquipMark.SetActive(true);
             
@@ -97,15 +101,15 @@ public class ItemSlot : MonoBehaviour, IPointerExitHandler, IPointerEnterHandler
         
     }
 
-    public bool Equipped()
+    public void Equipped()
     {
         if (item.isEquiped == false)
         {
-            return item.isEquiped = true;
+            item.isEquiped = true;
         }
         else
         {
-            return item.isEquiped = false;
+            item.isEquiped = false;
         }
     }
 
