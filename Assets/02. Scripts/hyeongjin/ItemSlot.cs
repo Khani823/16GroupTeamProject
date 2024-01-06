@@ -9,13 +9,12 @@ using Rito.InventorySystem;
 
 public class ItemSlot : MonoBehaviour, IPointerExitHandler, IPointerEnterHandler
 {
-    [HideInInspector]public ItemData inputData;
     [HideInInspector]public SlotClass slotClass; 
     [SerializeField] private Image _iconImage;
     public InventoryManager inventoryManager;
     public Image itemImage;
     public GameObject EquipMark;
-    private ItemClass item;
+    public ItemClass item;
     private GameObject[] slots;
     public ItemSlot itemslot;
     public GameObject popup;
@@ -43,10 +42,11 @@ public class ItemSlot : MonoBehaviour, IPointerExitHandler, IPointerEnterHandler
     public void Start()
     {
         iconimage = transform.Find("ItemIconImage").GetComponent<Image>();
+        item = inventoryManager.items[index].GetItem();
     }
     public void ChangeEquip()
     {
-        if (inputData.isEquiped)
+        if (item.isEquiped)
         {
             EquipMark.SetActive(true);
             
@@ -99,13 +99,13 @@ public class ItemSlot : MonoBehaviour, IPointerExitHandler, IPointerEnterHandler
 
     public bool Equipped()
     {
-        if (inputData.isEquiped == false)
+        if (item.isEquiped == false)
         {
-            return inputData.isEquiped = true;
+            return item.isEquiped = true;
         }
         else
         {
-            return inputData.isEquiped = false;
+            return item.isEquiped = false;
         }
     }
 

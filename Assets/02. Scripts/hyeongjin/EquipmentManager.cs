@@ -26,7 +26,9 @@ public class EquipmentManager : MonoBehaviour
 
 
             currentEquipment[slotIndex] = newitem;
-   
+        
+
+
     }
 
     public void UnEquip(ItemClass olditem) 
@@ -34,8 +36,11 @@ public class EquipmentManager : MonoBehaviour
         int slotIndex = (int)olditem.type;
         if (currentEquipment[slotIndex] == olditem)
         {
-            currentEquipment[slotIndex] = null;
-        }    
+            if (currentEquipment[slotIndex] != null)
+            {
+                currentEquipment[slotIndex] = null;
+            }
+        }     
     }
 
     // Update is called once per frame
