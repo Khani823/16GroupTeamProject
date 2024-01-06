@@ -22,10 +22,18 @@ public abstract class ItemClass : ScriptableObject
     public bool isStackable = true;
     [Multiline] public string tooltip;
     public Type type;
+    public ItemData inputData;
 
     public abstract ItemClass GetItem();
     public abstract WeaponClass GetWeapon();
     public abstract ArmorClass GetArmor();
     public abstract ConsumableClass GetConsumable();
     public abstract KeyClass GetKey();
+
+    public void Equip()
+    {
+        EquipmentManager.Instance.Equip(this);
+        
+    }
+
 }

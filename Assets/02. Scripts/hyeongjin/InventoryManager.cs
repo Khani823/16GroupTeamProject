@@ -141,4 +141,6 @@ public class InventoryManager : MonoBehaviour
         RefreshUI();
         Add(itemToAdd);
     }
+
+
 }

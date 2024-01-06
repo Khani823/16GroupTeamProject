@@ -97,4 +97,16 @@ public class ItemSlot : MonoBehaviour, IPointerExitHandler, IPointerEnterHandler
         
     }
 
+    public bool Equipped()
+    {
+        if (inputData.isEquiped == false)
+        {
+            return inputData.isEquiped = true;
+        }
+        else
+        {
+            return inputData.isEquiped = false;
+        }
+    }
+
 }

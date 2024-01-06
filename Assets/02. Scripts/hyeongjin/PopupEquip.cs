@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -9,7 +10,9 @@ public class PopupEquip : MonoBehaviour
     public ItemSlot slot;
     public TMP_Text infoText;
     public Button confirmBtn;
-    private ItemClass item;
+    public ItemClass item;
+    public EquipmentManager equipmentManager;
+    public InventoryManager inventoryManager;
 
     public void PopupSetting(ItemSlot slot)
     {
@@ -20,7 +23,8 @@ public class PopupEquip : MonoBehaviour
             confirmBtn.onClick.RemoveAllListeners();
             confirmBtn.onClick.AddListener(() =>
             {
-                slot.inputData.isEquiped = false;
+                slot.Equipped();
+                equipmentManager.UnEquip(inventoryManager.items[slot.index].GetItem());
                 slot.ChangeEquip();
             });
 
@@ -31,8 +35,9 @@ public class PopupEquip : MonoBehaviour
             confirmBtn.onClick.RemoveAllListeners();
             confirmBtn.onClick.AddListener(() =>
             {
-                slot.inputData.isEquiped = true;
+                slot.Equipped();
                 slot.ChangeEquip();
+                equipmentManager.Equip(inventoryManager.items[slot.index].GetItem());
             });
         }
     }
