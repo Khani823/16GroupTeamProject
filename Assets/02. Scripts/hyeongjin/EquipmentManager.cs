@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditorInternal.Profiling.Memory.Experimental;
 using UnityEngine;
+using static UnityEditor.Progress;
 
 public class EquipmentManager : MonoBehaviour
 {
@@ -24,13 +25,9 @@ public class EquipmentManager : MonoBehaviour
     public void Equip(ItemClass newitem)
     {
         int slotIndex = (int)newitem.type;
-        if (currentEquipment[slotIndex] != null )
-        {
-            UnEquip(currentEquipment[slotIndex]);
-        }
-        currentEquipment[slotIndex] = newitem;
 
-        //itemslot.ChangeEquip();
+        currentEquipment[slotIndex] = newitem;
+        
     }
 
     public void UnEquip(ItemClass olditem) 
@@ -40,9 +37,6 @@ public class EquipmentManager : MonoBehaviour
         {
             currentEquipment[slotIndex].isEquiped = false;
             currentEquipment[slotIndex] = null;
-        }
-
-        //itemslot.ChangeEquip();
+        }   
     }
-
 }

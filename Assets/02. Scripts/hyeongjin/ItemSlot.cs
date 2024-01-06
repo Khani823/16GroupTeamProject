@@ -31,15 +31,7 @@ public class ItemSlot : MonoBehaviour, IPointerExitHandler, IPointerEnterHandler
     private bool _isAccessibleSlot = true; // 슬롯 접근가능 여부
     private bool _isAccessibleItem = true; // 아이템 접근가능 여부
 
-    // Start is called before the first frame update
-    //public void Init(ItemData data)
-    //{
-    //    inputData = data;
-    //    itemImage.sprite = data._iconSprite;
-    //    itemImage.enabled = true;
 
-    //    ChangeEquip();
-    //}
     public void Start()
     {
         iconimage = transform.Find("ItemIconImage").GetComponent<Image>();
@@ -47,6 +39,10 @@ public class ItemSlot : MonoBehaviour, IPointerExitHandler, IPointerEnterHandler
         item.isEquiped = false;
     }
 
+    //public void Update()
+    //{
+    //    ChangeEquip();
+    //}
 
     public void ChangeEquip()
     {
