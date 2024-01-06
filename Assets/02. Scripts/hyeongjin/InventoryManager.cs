@@ -30,6 +30,7 @@ public class InventoryManager : MonoBehaviour
         Add(itemToAdd);
         Remove(itemToRemove);
     }
+    
 
     public void RefreshUI()
     {
@@ -135,5 +136,9 @@ public class InventoryManager : MonoBehaviour
         
         Remove(item);
     }
-
+    public void OnCollisionEnter2D(Collision2D collision)
+    {
+        RefreshUI();
+        Add(itemToAdd);
+    }
 }
