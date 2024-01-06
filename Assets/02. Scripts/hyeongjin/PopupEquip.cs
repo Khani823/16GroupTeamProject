@@ -17,7 +17,7 @@ public class PopupEquip : MonoBehaviour
     public void PopupSetting(ItemSlot slot)
     {
 
-        if (slot.item.isEquiped)
+        if (slot.inputData.isEquiped)
         {
             infoText.text = "장착을 해제하시겠습니까?";
             confirmBtn.onClick.RemoveAllListeners();

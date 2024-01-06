@@ -22,7 +22,7 @@ public abstract class ItemClass : ScriptableObject
     public bool isStackable = true;
     [Multiline] public string tooltip;
     public Type type;
-    public bool isEquiped;
+    public ItemData inputData;
 
     public abstract ItemClass GetItem();
     public abstract WeaponClass GetWeapon();
