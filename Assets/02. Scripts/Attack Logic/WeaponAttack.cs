@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -63,13 +64,29 @@ public abstract class WeaponAttack : MonoBehaviour
         Vector2 position = transform.position;
         RaycastHit2D[] hits = Physics2D.RaycastAll(position, direction, range, targetlayer);  
         foreach (RaycastHit2D hit in hits)
-        { 
-	        if(hit.collider != null)
+        {
+            IDamageable damageableObject = hit.collider.GetComponent<IDamageable>();
+	        if(damageableObject != null)
             {
-                Debug.Log("맞았습니다! 대ㅔ: " + hit.collider.gameObject.name);
+                CharacterStatsSO attackerStat = GetComponentInParent<CharacterStatsSO>();
+                CharacterStatsSO defenderStat = hit.collider.GetComponent<CharacterStatsSO>();
+
+                if (defenderStat != null)
+                {
+                    int damage = DamageCalculation(attackerStat, defenderStat);
+                    damageableObject.TakeDamage(damage);
+                    Debug.Log("맞았습니다! 대ㅔ: " + hit.collider.gameObject.name);
+                }
             }
 		}
     }
+
+    protected virtual int DamageCalculation(CharacterStatsSO attackerStat, CharacterStatsSO defenderStat)
+    {
+        int baseDamage = Mathf.Max(1, attackerStat.atk - defenderStat.def);
+        return baseDamage;
+    }
+
     public abstract void ShowAttackRange(Vector2 direction);
 
     public void ClearRangeBoxes()
