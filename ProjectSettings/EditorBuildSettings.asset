@@ -5,7 +5,13 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/01. Scenes/Chulju_Scene.unity
+    guid: 2d8537dbb2b6eb7448ee79876ef9b04d
+  - enabled: 1
+    path: Assets/BattleMap_Chulju/BattleMap_YCJ_01.unity
+    guid: 0cfa98fd91b08154f8cb50e91c0c67e3
   m_configObjects: {}
