@@ -4,6 +4,7 @@ using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+using static UnityEditor.Experimental.GraphView.Port;
 using static UnityEditor.Progress;
 
 public class InventoryManager : MonoBehaviour
@@ -50,6 +51,7 @@ public class InventoryManager : MonoBehaviour
                 //currentIconImage.transform.GetComponent<Image>().sprite = items[i].GetItem().itemIcon;
                 slots[i].transform.GetChild(0).GetComponent<Image>().sprite = items[i].GetItem().itemIcon;
                 slots[i].transform.GetChild(0).GetComponent<Image>().enabled = true;
+                slots[i].GetComponent<ItemSlot>().item = items[i].GetItem();
                 slots[i].GetComponent<ItemSlot>().index = i;
                 if (items[i].GetItem().isStackable)
                 {
@@ -113,7 +115,6 @@ public class InventoryManager : MonoBehaviour
                         slotToRemove = slot;
                         break;
                     }
-
                 }
                 items.Remove(slotToRemove);
             }
@@ -143,6 +144,7 @@ public class InventoryManager : MonoBehaviour
         stat.PotionHeal(item.GetConsumable().HealthAdded);
         stat.ManaHeal(item.GetConsumable().ManaAdded);
         Remove(item);
+        RefreshUI();
     }
     public void OnCollisionEnter2D(Collision2D collision)
     {
@@ -150,5 +152,22 @@ public class InventoryManager : MonoBehaviour
         Add(itemToAdd);
     }
 
+    //public void Trim()
+    //{
+    //    int i = -1;
+    //    while (items[++i] != null) ;
+    //    int j = i;
 
+    //    while (true)
+    //    {
+    //        while (++j < slots.Length && items[j] == null) ;
+
+    //        if (j == slots.Length)
+    //            break;
+
+    //        items[i] = items[j];
+    //        items[j] = null;
+    //        i++;
+    //    }
+    //}
 }

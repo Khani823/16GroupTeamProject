@@ -42,6 +42,7 @@ public class ItemSlot : MonoBehaviour, IPointerExitHandler, IPointerEnterHandler
 
 
 
+
     public void ChangeEquip(ItemClass items)
     {
         if (items.IsEquipped == true)

@@ -1273,6 +1273,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
+  maxMana: 100
   damage:
     BaseValue: 5
   defense:
@@ -1740,19 +1741,20 @@ MonoBehaviour:
   itemToAdd: {fileID: 11400000, guid: 64612b0dcc0409940960ca3df367a27d, type: 2}
   itemToRemove: {fileID: 0}
   items:
+  - item: {fileID: 11400000, guid: 6a6f5539bd1f61a47ace437ce694e415, type: 2}
+    quantity: 1
   - item: {fileID: 11400000, guid: 5fb9806f370fd2749b826c1663ecbe33, type: 2}
     quantity: 1
   - item: {fileID: 11400000, guid: 3e417fb8d75501b4c83b482c2d2fe803, type: 2}
     quantity: 1
   - item: {fileID: 11400000, guid: 3e417fb8d75501b4c83b482c2d2fe803, type: 2}
     quantity: 1
-  - item: {fileID: 11400000, guid: 6a6f5539bd1f61a47ace437ce694e415, type: 2}
-    quantity: 1
   - item: {fileID: 11400000, guid: 36bcd2f6ad81de641a46b271b1d349a7, type: 2}
     quantity: 1
   - item: {fileID: 11400000, guid: a30fcc93fa984b44da987471d96d2364, type: 2}
     quantity: 1
   slots: []
+  stat: {fileID: 594912134}
 --- !u!4 &782694486
 Transform:
   m_ObjectHideFlags: 0

@@ -42,10 +42,6 @@ public class PlayerStat1 : MonoBehaviour
             defense.RemoveModifier(olditem.GetEquipment().Defense);
             damage.RemoveModifier(olditem.GetEquipment().Damage);
         }
-        if (olditem == null)
-        {
-            Debug.Log("null");
-        }
     }
     public void TakeDamage(int damage)
     {
