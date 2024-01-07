@@ -7,6 +7,12 @@ public abstract class Character : MonoBehaviour, IDamageable
 {
     public CharacterStatsSO stats;
     private CharacterStatsSO currentStats;
+    protected TurnManager turnManager;
+
+    protected virtual void Start()
+    {
+        turnManager = FindObjectOfType<TurnManager>();
+    }
 
     private void OnEnable()
     {
@@ -30,4 +36,15 @@ public abstract class Character : MonoBehaviour, IDamageable
     {
         throw new NotImplementedException();
     }
+
+    public virtual void EnableTurnAction()
+    {
+
+    }
+    public virtual void DisableTurnAction()
+    {
+
+    }
+
+    protected abstract void PerformAction();
 }

@@ -11,6 +11,7 @@ public class TurnManager : MonoBehaviour
     private EnemyManager enemyManager;
 
     private Queue<GameObject> turnQueue = new Queue<GameObject>();
+    private GameObject currentlyInAction;
     void Start()
     {
         enemyManager = GetComponent<EnemyManager>();
@@ -21,9 +22,17 @@ public class TurnManager : MonoBehaviour
     {
         if(turnQueue.Count > 0 )
         {
-            GameObject currentTurn = turnQueue.Dequeue();
-            Debug.Log("현재턴: " + currentTurn.name);
-            turnQueue.Enqueue(currentTurn);
+            if(currentlyInAction != null)
+            {
+                currentlyInAction.GetComponent<Character>().DisableTurnAction();
+            }
+
+            currentlyInAction = turnQueue.Dequeue();
+            Debug.Log("현재턴: " + currentlyInAction.name);
+
+            currentlyInAction.GetComponent<Character>().EnableTurnAction();
+
+            turnQueue.Enqueue(currentlyInAction);
 
             turnCount++;
                 if (turnCount % turnToSpawn == 0)
@@ -31,6 +40,16 @@ public class TurnManager : MonoBehaviour
                 enemyManager.TrySpawning();
             }
         }
+    }
+
+    private void ActivateObject(GameObject activeObject)
+    {
+        activeObject.GetComponent<Character>().EnableTurnAction();
+    }
+
+    public bool IsCurrentlyInAction(GameObject activeObject)
+    {
+        return activeObject == currentlyInAction;
     }
 
     public void AddToTurn(GameObject gameObject)

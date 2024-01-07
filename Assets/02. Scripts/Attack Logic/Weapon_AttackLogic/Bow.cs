@@ -39,6 +39,28 @@ public class Bow : WeaponAttack
         }
     }
 
+    protected override void CheckAttackRange(Vector2 direction)
+    {
+        Vector2 position = transform.position;
+        RaycastHit2D hit = Physics2D.Raycast(position, direction, range, targetlayer);
+
+        IDamageable damageableObject = hit.collider.GetComponent<IDamageable>();
+        if (damageableObject != null)
+        {
+            Character attackerStat = GetComponentInParent<Character>();
+            Character defenderStat = hit.collider.GetComponent<Character>();
+
+            if (defenderStat != null)
+            {
+                Vector2 targetPosition = hit.collider.transform.position;
+                int damage = CalculateFinalDamage(attackerStat.stats, defenderStat.stats, direction, targetPosition);
+                damageableObject.TakeDamage(damage);
+                Debug.Log($"맞은 대상: {hit.collider.gameObject.name}, 받은 대미지: {damage}");
+            }
+        }
+        
+    }
+
     protected override int CalculateFinalDamage(CharacterStatsSO attackerStats, CharacterStatsSO defenderStats, Vector2 attackDirection, Vector2 targetPosition)
     {
         int baseDamage = DamageCalculation(attackerStats, defenderStats);

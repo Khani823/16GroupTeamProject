@@ -14,4 +14,9 @@ public class EnemyScript : Character
     {
         enemyManager.RemoveEnemy(this.gameObject);
     }
+
+    protected override void PerformAction()
+    {
+        throw new System.NotImplementedException();
+    }
 }

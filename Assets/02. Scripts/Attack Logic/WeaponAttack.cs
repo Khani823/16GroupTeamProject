@@ -13,6 +13,7 @@ public abstract class WeaponAttack : MonoBehaviour
     protected List<GameObject> rangeBoxes = new List<GameObject>();
     private PlayerController2D directionToLook;
     private PlayerController2D attack;
+    private TurnManager turnManager;
 
     protected virtual void Awake()
     {
@@ -22,6 +23,11 @@ public abstract class WeaponAttack : MonoBehaviour
         directionToLook.Player.Move.canceled += OnMoveCanceled; // 구독 해제
         attack.Player.Attack.performed += OnAttackPerformed;
         attack.Player.Attack.canceled += OnAttackCanceled;
+    }
+
+    protected virtual void Start()
+    {
+        turnManager = FindObjectOfType<TurnManager>();
     }
 
     private void OnAttackPerformed(InputAction.CallbackContext obj)
@@ -70,12 +76,12 @@ public abstract class WeaponAttack : MonoBehaviour
 
     public virtual void Attack(Vector2 direction)
     {
-        Debug.Log("SpaceBar");
         CheckAttackRange(direction);
         ClearRangeBoxes();
+        turnManager.NextTurn();
     }
 
-    protected void CheckAttackRange(Vector2 direction)
+    protected virtual void CheckAttackRange(Vector2 direction)
     {
         Vector2 position = transform.position;
         RaycastHit2D[] hits = Physics2D.RaycastAll(position, direction, range, targetlayer);  
