@@ -22,7 +22,8 @@ public abstract class ItemClass : ScriptableObject
     public bool isStackable = true;
     public string tooltip;
     public Type type;
-    public bool isEquiped;
+    public bool IsEquipped;
+
 
     public abstract ItemClass GetItem();
     public abstract EquipmentClass GetEquipment();

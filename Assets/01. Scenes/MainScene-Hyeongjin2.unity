@@ -1275,8 +1275,8 @@ MonoBehaviour:
   maxHealth: 100
   damage:
     BaseValue: 5
-  deffense:
-    BaseValue: 3
+  defense:
+    BaseValue: 0
 --- !u!224 &656711438 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2635925674401514903, guid: 0c48a0e600b3486488400b83426594e7, type: 3}
@@ -1747,6 +1747,10 @@ MonoBehaviour:
   - item: {fileID: 11400000, guid: 3e417fb8d75501b4c83b482c2d2fe803, type: 2}
     quantity: 1
   - item: {fileID: 11400000, guid: 6a6f5539bd1f61a47ace437ce694e415, type: 2}
+    quantity: 1
+  - item: {fileID: 11400000, guid: 36bcd2f6ad81de641a46b271b1d349a7, type: 2}
+    quantity: 1
+  - item: {fileID: 11400000, guid: a30fcc93fa984b44da987471d96d2364, type: 2}
     quantity: 1
   slots: []
 --- !u!4 &782694486

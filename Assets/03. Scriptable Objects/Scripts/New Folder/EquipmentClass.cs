@@ -9,6 +9,7 @@ public class EquipmentClass : ItemClass
     [Header("Weapon")]
     public int Damage;
     public int Defense;
+    
 
 
     public override ItemClass GetItem() { return this; }

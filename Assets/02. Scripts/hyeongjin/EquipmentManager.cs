@@ -15,33 +15,33 @@ public class EquipmentManager : MonoBehaviour
         Instance = this;
     }
 
-    public EquipmentClass[] currentEquipment;
+    public ItemClass[] currentEquipment;
 
-    public delegate void OnEquipmentChanged(EquipmentClass newitem, EquipmentClass olditem);
+    public delegate void OnEquipmentChanged(ItemClass newitem, ItemClass olditem);
     public OnEquipmentChanged onEquipmentChanged;
     // Start is called before the first frame update
     void Start()
     {
         int numSlots = System.Enum.GetNames(typeof(Type)).Length;
-        currentEquipment = new EquipmentClass[numSlots];
+        currentEquipment = new ItemClass[numSlots];
     }
 
-    public void Equip(EquipmentClass newitem)
+    public void Equip(ItemClass newitem)
     {
         int slotIndex = (int)newitem.type;
 
-        EquipmentClass olditem = null;
+        ItemClass olditem = null;
         if (currentEquipment[slotIndex] == null)
         {
             currentEquipment[slotIndex] = newitem;
-            currentEquipment[slotIndex].isEquiped = true;
+            currentEquipment[slotIndex].IsEquipped = true;
             //Debug.Log(currentEquipment[slotIndex].isEquiped);
         }
         else
         {
             UnEquip(currentEquipment[slotIndex]);
             currentEquipment[slotIndex] = newitem;
-            currentEquipment[slotIndex].isEquiped = true;
+            currentEquipment[slotIndex].IsEquipped = true;
         }
         if (onEquipmentChanged != null)
         {
@@ -50,17 +50,18 @@ public class EquipmentManager : MonoBehaviour
 
     }
 
-    public void UnEquip(EquipmentClass olditem) 
+    public void UnEquip(ItemClass olditem) 
     {
         int slotIndex = (int)olditem.type;
         if (currentEquipment[slotIndex] == olditem)
         {
-            currentEquipment[slotIndex].isEquiped = false; 
+            currentEquipment[slotIndex].IsEquipped = false; 
             currentEquipment[slotIndex] = null;
         }
         if (onEquipmentChanged != null)
-        {
+        {   
             onEquipmentChanged.Invoke(null, olditem);
+            
         }
     }
 }

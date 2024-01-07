@@ -8,7 +8,7 @@ public class PlayerStat1 : MonoBehaviour
     public int maxHealth = 100;
     public int currentHealth {  get; private set; }
     public Stats damage;
-    public Stats deffense;
+    public Stats defense;
 
     public void Awake()
     {
@@ -26,23 +26,27 @@ public class PlayerStat1 : MonoBehaviour
             TakeDamage(10);
         }
     }
-    void OnEquipmentChanged(EquipmentClass newitem, EquipmentClass olditem)
+    void OnEquipmentChanged(ItemClass newitem, ItemClass olditem)
     {
         if (newitem != null)
         {
-        deffense.AddModifier(newitem.Defense);
-        damage.AddModifier(newitem.Damage);
+        defense.AddModifier(newitem.GetEquipment().Defense);
+        damage.AddModifier(newitem.GetEquipment().Damage);
         }
 
         if (olditem != null)
+        {           
+            defense.RemoveModifier(olditem.GetEquipment().Defense);
+            damage.RemoveModifier(olditem.GetEquipment().Damage);
+        }
+        if (olditem == null)
         {
-            deffense.RemoveModifier(olditem.Defense);
-            damage.RemoveModifier(olditem.Damage);
+            Debug.Log("null");
         }
     }
     public void TakeDamage(int damage)
     {
-        damage -= deffense.GetValue();
+        damage -= defense.GetValue();
         damage = Mathf.Clamp(damage, 0, int.MaxValue);
         Debug.Log(transform.name + "takes" + damage + "damage");
 

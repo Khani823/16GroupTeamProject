@@ -17,7 +17,6 @@ public class ItemSlot : MonoBehaviour, IPointerExitHandler, IPointerEnterHandler
     public Image itemImage;
     public GameObject EquipMark;
     public ItemClass item;
-    public EquipmentClass equipment;
     private GameObject[] slots;
     public ItemSlot itemslot;
     public GameObject popup;
@@ -38,13 +37,14 @@ public class ItemSlot : MonoBehaviour, IPointerExitHandler, IPointerEnterHandler
     {
         iconimage = transform.Find("ItemIconImage").GetComponent<Image>();
         item = inventoryManager.items[index].GetItem();
-        item.isEquiped = false;
+        item.IsEquipped = false;
     }
+
 
 
     public void ChangeEquip(ItemClass items)
     {
-        if (items.isEquiped == true)
+        if (items.IsEquipped == true)
         {
             EquipMark.SetActive(true);
             
@@ -58,7 +58,15 @@ public class ItemSlot : MonoBehaviour, IPointerExitHandler, IPointerEnterHandler
     {
         if (iconimage.sprite != null)
         {
-            EquipPopup(inventoryManager.items[index].GetItem());
+            if (item.type != Type.key)
+            {
+                EquipPopup(inventoryManager.items[index].GetItem());
+            }
+            else
+            {
+                return;
+            }
+                
         }       
     }
 

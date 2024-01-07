@@ -20,21 +20,25 @@ public class PopupEquip : MonoBehaviour
 
     public void PopupSetting(ItemSlot slot)
     {
+        if (slot.item.type == Type.key)
+        {
+            return;
+        }
 
-        if (slot.item.isEquiped)
+        else if (slot.item.IsEquipped)
         {
             infoText.text = "장착을 해제하시겠습니까?";
             confirmBtn.onClick.RemoveAllListeners();
             confirmBtn.onClick.AddListener(() =>
             {
                 
-                equipmentManager.UnEquip(inventoryManager.items[slot.index].GetItem());
+                equipmentManager.UnEquip(inventoryManager.items[slot.index].GetItem().GetEquipment());
                 //Debug.Log(inventoryManager.items[slot.index].GetItem().isEquiped);
-                //slot.ChangeEquip(inventoryManager.items[slot.index].GetItem());
-                for (int i = 0; i < inventoryManager.items.Count; i++)
-                {
-                    slot.ChangeEquip(inventoryManager.items[i].GetItem());
-                }
+                slot.ChangeEquip(inventoryManager.items[slot.index].GetItem());
+                //for (int i = 0; i < inventoryManager.items.Count; i++)
+                //{
+                //    slot.ChangeEquip(inventoryManager.items[i].GetItem());
+                //}
             });
 
         }
@@ -45,13 +49,13 @@ public class PopupEquip : MonoBehaviour
             confirmBtn.onClick.AddListener(() =>
             {
                 
-                equipmentManager.Equip(inventoryManager.items[slot.index].GetItem());
+                equipmentManager.Equip(inventoryManager.items[slot.index].GetItem().GetEquipment());
                 //Debug.Log(inventoryManager.items[slot.index].GetItem().isEquiped);
-                //slot.ChangeEquip(inventoryManager.items[slot.index].GetItem());
-                for (int i = 0; i < inventoryManager.items.Count; i++)
-                {
-                    slot.ChangeEquip(inventoryManager.items[i].GetItem()); 
-                }
+                slot.ChangeEquip(inventoryManager.items[slot.index].GetItem());
+                //for (int i = 0; i < inventoryManager.items.Count; i++)
+                //{
+                //    slot.ChangeEquip(inventoryManager.items[i].GetItem()); 
+                //}
             });
         }
     }

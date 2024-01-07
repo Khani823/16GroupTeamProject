@@ -17,7 +17,7 @@ MonoBehaviour:
   price: 0
   isStackable: 0
   tooltip: 
-  type: 5
-  isEquiped: 0
+  type: 4
+  IsEquipped: 0
   Damage: 0
   Defense: 2
