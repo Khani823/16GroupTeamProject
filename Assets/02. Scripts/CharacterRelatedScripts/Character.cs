@@ -8,7 +8,6 @@ public abstract class Character : MonoBehaviour, IDamageable
     public CharacterStatsSO stats;
     private CharacterStatsSO currentStats;
 
-
     private void OnEnable()
     {
         currentStats = Instantiate(stats);
