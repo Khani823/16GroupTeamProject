@@ -38,4 +38,12 @@ public class Sword : WeaponAttack
         DrawAttackRay(Quaternion.Euler(0, 0, 90) * lookDirection);
         DrawAttackRay(Quaternion.Euler(0, 0, -90) * lookDirection);
     }
+
+    protected override int CalculateFinalDamage(CharacterStatsSO attackerStats, CharacterStatsSO defenderStats, Vector2 attackDirection, Vector2 targetPosition)
+    {
+        int baseDamage = DamageCalculation(attackerStats, defenderStats);
+        bool isFront = IsFront(targetPosition);
+        float damageModifier = isFront ? UnityEngine.Random.Range(0.9f, 1.0f) : UnityEngine.Random.Range(0.7f, 0.8f);
+        return Mathf.RoundToInt(baseDamage * damageModifier);
+    }
 }

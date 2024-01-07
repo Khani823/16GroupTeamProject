@@ -21,4 +21,11 @@ public class Hammer : WeaponAttack
             rangeBoxes.Add(showingBox);
         }
     }
+
+    protected override int CalculateFinalDamage(CharacterStatsSO attackerStats, CharacterStatsSO defenderStats, Vector2 attackDirection, Vector2 targetPosition)
+    {
+        int baseDamage = DamageCalculation(attackerStats, defenderStats);
+        float damageModifier = UnityEngine.Random.Range(0.9f, 1.0f);
+        return Mathf.RoundToInt(baseDamage * damageModifier);
+    }
 }

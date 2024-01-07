@@ -6,11 +6,17 @@ using UnityEngine;
 public abstract class Character : MonoBehaviour, IDamageable
 {
     public CharacterStatsSO stats;
+    private CharacterStatsSO currentStats;
 
+
+    private void OnEnable()
+    {
+        currentStats = Instantiate(stats);
+    }
     public virtual void TakeDamage(int damage)
     {
-        stats.hp -= damage;
-        if(stats.hp <= 0)
+        currentStats.hp -= damage;
+        if(currentStats.hp <= 0)
         {
             Die();
         }    

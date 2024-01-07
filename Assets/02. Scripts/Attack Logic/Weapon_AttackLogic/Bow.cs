@@ -38,4 +38,11 @@ public class Bow : WeaponAttack
                 break;
         }
     }
+
+    protected override int CalculateFinalDamage(CharacterStatsSO attackerStats, CharacterStatsSO defenderStats, Vector2 attackDirection, Vector2 targetPosition)
+    {
+        int baseDamage = DamageCalculation(attackerStats, defenderStats);
+        float damageModifier = UnityEngine.Random.Range(1.2f, 1.4f);
+        return Mathf.RoundToInt(baseDamage * damageModifier);
+    }
 }

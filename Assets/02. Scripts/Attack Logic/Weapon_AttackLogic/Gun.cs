@@ -5,8 +5,11 @@ using static UnityEngine.RuleTile.TilingRuleOutput;
 
 public class Gun : WeaponAttack
 {
+
+    private int hitCount = 0;
     public override void Attack(Vector2 direction)
     {
+        hitCount = 0;
         CheckAttackRange(direction);
         ClearRangeBoxes();
     }
@@ -20,5 +23,27 @@ public class Gun : WeaponAttack
             GameObject showingBox = Instantiate(rangeBox, tile, Quaternion.identity);
             rangeBoxes.Add(showingBox);
         }
+    }
+
+    protected override int CalculateFinalDamage(CharacterStatsSO attackerStats, CharacterStatsSO defenderStats, Vector2 attackDirection, Vector2 targetPosition)
+    {
+        int baseDamage = DamageCalculation(attackerStats, defenderStats);
+        float damageModifier;
+
+        if(hitCount == 0)
+        {
+            damageModifier = UnityEngine.Random.Range(0.9f, 1.0f);
+        }
+        else if (hitCount ==1 )
+        {
+            damageModifier = UnityEngine.Random.Range(0.65f, 0.75f);
+        }
+        else
+        {
+            damageModifier = 0.5f;
+        }
+
+        hitCount++;
+        return Mathf.RoundToInt(baseDamage * damageModifier);
     }
 }
