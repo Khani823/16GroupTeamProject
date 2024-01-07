@@ -5,8 +5,8 @@ using UnityEngine;
 public class ConsumableClass : ItemClass
 {
     [Header("Consumable")]
-    public float HealthAdded;
-    public float ManaAdded;
+    public int HealthAdded;
+    public int ManaAdded;
 
     public override ItemClass GetItem() { return this; }
     public override EquipmentClass GetEquipment() { return null; }

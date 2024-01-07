@@ -16,6 +16,7 @@ public class InventoryManager : MonoBehaviour
 
     public List<SlotClass> items = new List<SlotClass>();
     public GameObject[] slots;
+    public PlayerStat1 stat;
 
 
     public void Start()
@@ -139,7 +140,8 @@ public class InventoryManager : MonoBehaviour
 
     public void Consume(ItemClass item)
     {
-        
+        stat.PotionHeal(item.GetConsumable().HealthAdded);
+        stat.ManaHeal(item.GetConsumable().ManaAdded);
         Remove(item);
     }
     public void OnCollisionEnter2D(Collision2D collision)
