@@ -17,6 +17,7 @@ public class ItemSlot : MonoBehaviour, IPointerExitHandler, IPointerEnterHandler
     public Image itemImage;
     public GameObject EquipMark;
     public ItemClass item;
+    public EquipmentClass equipment;
     private GameObject[] slots;
     public ItemSlot itemslot;
     public GameObject popup;

@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1324c08cce550e74d92639a9377b063a, type: 3}
+  m_Script: {fileID: 11500000, guid: 326be5ccc8899e04a953cb11bca92ceb, type: 3}
   m_Name: Helmet
   m_EditorClassIdentifier: 
   itemName: Helmet
@@ -17,5 +17,7 @@ MonoBehaviour:
   price: 0
   isStackable: 0
   tooltip: 
-  type: 4
-  defense: 0
+  type: 5
+  isEquiped: 0
+  Damage: 0
+  Defense: 2

@@ -34,8 +34,6 @@ public class PopupEquip : MonoBehaviour
                 for (int i = 0; i < inventoryManager.items.Count; i++)
                 {
                     slot.ChangeEquip(inventoryManager.items[i].GetItem());
-                    Debug.Log(i);
-
                 }
             });
 
@@ -52,8 +50,7 @@ public class PopupEquip : MonoBehaviour
                 //slot.ChangeEquip(inventoryManager.items[slot.index].GetItem());
                 for (int i = 0; i < inventoryManager.items.Count; i++)
                 {
-                    slot.ChangeEquip(inventoryManager.items[i].GetItem());
-                    Debug.Log(i);
+                    slot.ChangeEquip(inventoryManager.items[i].GetItem()); 
                 }
             });
         }

@@ -9,8 +9,7 @@ public class ConsumableClass : ItemClass
     public float ManaAdded;
 
     public override ItemClass GetItem() { return this; }
-    public override WeaponClass GetWeapon() { return null; }
-    public override ArmorClass GetArmor() { return null; }
+    public override EquipmentClass GetEquipment() { return null; }
     public override ConsumableClass GetConsumable() { return this; }
     public override KeyClass GetKey() { return null; }
 }

@@ -20,20 +20,15 @@ public abstract class ItemClass : ScriptableObject
     public Sprite itemIcon;
     public float price;
     public bool isStackable = true;
-    [Multiline] public string tooltip;
+    public string tooltip;
     public Type type;
     public bool isEquiped;
 
     public abstract ItemClass GetItem();
-    public abstract WeaponClass GetWeapon();
-    public abstract ArmorClass GetArmor();
+    public abstract EquipmentClass GetEquipment();
     public abstract ConsumableClass GetConsumable();
     public abstract KeyClass GetKey();
 
-    public void Equip()
-    {
-        EquipmentManager.Instance.Equip(this);
-        
-    }
+
 
 }
