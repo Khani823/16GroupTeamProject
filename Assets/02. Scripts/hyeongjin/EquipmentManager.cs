@@ -14,7 +14,7 @@ public class EquipmentManager : MonoBehaviour
         Instance = this;
     }
 
-    ItemClass[] currentEquipment;
+    public ItemClass[] currentEquipment;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,9 +25,20 @@ public class EquipmentManager : MonoBehaviour
     public void Equip(ItemClass newitem)
     {
         int slotIndex = (int)newitem.type;
+        if (currentEquipment[slotIndex] == null)
+        {
+            currentEquipment[slotIndex] = newitem;
+            currentEquipment[slotIndex].isEquiped = true;
+            //Debug.Log(currentEquipment[slotIndex].isEquiped);
+        }
+        else
+        {
+            UnEquip(currentEquipment[slotIndex]);
+            currentEquipment[slotIndex] = newitem;
+            currentEquipment[slotIndex].isEquiped = true;
+        }
 
-        currentEquipment[slotIndex] = newitem;
-        
+
     }
 
     public void UnEquip(ItemClass olditem) 
@@ -35,7 +46,7 @@ public class EquipmentManager : MonoBehaviour
         int slotIndex = (int)olditem.type;
         if (currentEquipment[slotIndex] == olditem)
         {
-            currentEquipment[slotIndex].isEquiped = false;
+            currentEquipment[slotIndex].isEquiped = false; 
             currentEquipment[slotIndex] = null;
         }   
     }

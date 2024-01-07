@@ -15,7 +15,7 @@ public class InventoryManager : MonoBehaviour
 
 
     public List<SlotClass> items = new List<SlotClass>();
-    private GameObject[] slots;
+    public GameObject[] slots;
 
 
     public void Start()

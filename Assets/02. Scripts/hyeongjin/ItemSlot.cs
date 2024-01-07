@@ -7,6 +7,7 @@ using UnityEngine.EventSystems;
 
 using Rito.InventorySystem;
 using static UnityEditor.Progress;
+using UnityEditorInternal.Profiling.Memory.Experimental;
 
 public class ItemSlot : MonoBehaviour, IPointerExitHandler, IPointerEnterHandler
 {
@@ -39,14 +40,10 @@ public class ItemSlot : MonoBehaviour, IPointerExitHandler, IPointerEnterHandler
         item.isEquiped = false;
     }
 
-    //public void Update()
-    //{
-    //    ChangeEquip();
-    //}
 
-    public void ChangeEquip()
+    public void ChangeEquip(ItemClass items)
     {
-        if (item.isEquiped == true)
+        if (items.isEquiped == true)
         {
             EquipMark.SetActive(true);
             
@@ -54,7 +51,6 @@ public class ItemSlot : MonoBehaviour, IPointerExitHandler, IPointerEnterHandler
         else
         {
             EquipMark.SetActive(false);
-            
         }
     }
     public void Popup()
@@ -97,16 +93,16 @@ public class ItemSlot : MonoBehaviour, IPointerExitHandler, IPointerEnterHandler
         
     }
 
-    public void Equipped()
-    {
-        if (item.isEquiped == false)
-        {
-            item.isEquiped = true;
-        }
-        else
-        {
-            item.isEquiped = false;
-        }
-    }
+    //public void Equipped()
+    //{
+    //    if (item.isEquiped == false)
+    //    {
+    //        item.isEquiped = true;
+    //    }
+    //    else
+    //    {
+    //        item.isEquiped = false;
+    //    }
+    //}
 
 }

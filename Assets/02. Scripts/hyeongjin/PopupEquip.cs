@@ -2,8 +2,10 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
 using UnityEngine.UI;
+using static UnityEditor.Progress;
 
 public class PopupEquip : MonoBehaviour
 {
@@ -15,6 +17,7 @@ public class PopupEquip : MonoBehaviour
     public InventoryManager inventoryManager;
 
 
+
     public void PopupSetting(ItemSlot slot)
     {
 
@@ -24,9 +27,16 @@ public class PopupEquip : MonoBehaviour
             confirmBtn.onClick.RemoveAllListeners();
             confirmBtn.onClick.AddListener(() =>
             {
-                slot.Equipped();
+                
                 equipmentManager.UnEquip(inventoryManager.items[slot.index].GetItem());
-                slot.ChangeEquip();
+                //Debug.Log(inventoryManager.items[slot.index].GetItem().isEquiped);
+                //slot.ChangeEquip(inventoryManager.items[slot.index].GetItem());
+                for (int i = 0; i < inventoryManager.items.Count; i++)
+                {
+                    slot.ChangeEquip(inventoryManager.items[i].GetItem());
+                    Debug.Log(i);
+
+                }
             });
 
         }
@@ -36,9 +46,15 @@ public class PopupEquip : MonoBehaviour
             confirmBtn.onClick.RemoveAllListeners();
             confirmBtn.onClick.AddListener(() =>
             {
-                slot.Equipped();
-                slot.ChangeEquip();
+                
                 equipmentManager.Equip(inventoryManager.items[slot.index].GetItem());
+                //Debug.Log(inventoryManager.items[slot.index].GetItem().isEquiped);
+                //slot.ChangeEquip(inventoryManager.items[slot.index].GetItem());
+                for (int i = 0; i < inventoryManager.items.Count; i++)
+                {
+                    slot.ChangeEquip(inventoryManager.items[i].GetItem());
+                    Debug.Log(i);
+                }
             });
         }
     }
