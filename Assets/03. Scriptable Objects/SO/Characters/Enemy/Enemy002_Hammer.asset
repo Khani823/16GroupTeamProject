@@ -9,7 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 72de1a1acda0fd649875811641ffaccf, type: 3}
-  m_Name: UserData_
+  m_Script: {fileID: 11500000, guid: 90ea1d5656855e5499e4d29e04e59f01, type: 3}
+  m_Name: Enemy002_Hammer
   m_EditorClassIdentifier: 
-  UserName: 
+  hp: 10
+  atk: 0
+  def: 0
+  weaponAttack: {fileID: -9033494100011983011, guid: 1653a27f1e1144d6b456af292e0c9bd1, type: 3}
+  ID: 2

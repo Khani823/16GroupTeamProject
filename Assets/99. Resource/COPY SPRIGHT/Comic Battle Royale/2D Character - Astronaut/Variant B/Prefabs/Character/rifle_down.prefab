@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6917992152425865939}
   - component: {fileID: 6917992152425865937}
   - component: {fileID: 6917992152425865936}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: muzzle_flash_rifle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -105,6 +105,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &6917992152908480177
 GameObject:
   m_ObjectHideFlags: 0
@@ -115,7 +116,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6917992152908480182}
   - component: {fileID: 6917992152908480183}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: weapon_rifle_down
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -199,7 +200,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6917992153366494313}
   - component: {fileID: 6917992153366494318}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: shadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -283,9 +284,9 @@ GameObject:
   m_Component:
   - component: {fileID: 6917992153863859438}
   - component: {fileID: 6917992153863859433}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: rifle_down
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

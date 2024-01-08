@@ -3,63 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using static UnityEngine.RuleTile.TilingRuleOutput;
 
-public class Gun : MonoBehaviour
+public class Gun : WeaponAttack
 {
-    public float range = 4f;
-    public LayerMask targetlayer;
-    public Vector2 lookDirection;
-    public GameObject rangeBox;
-    private List<GameObject> rangeBoxes = new List<GameObject>();
 
-
-    private void Start()
+    private int hitCount = 0;
+    public override void Attack(Vector2 direction)
     {
-        TestController.OnDirectionChange += UpdateDirection;
+        hitCount = 0;
+        base.Attack(direction);
     }
 
-    private void OnDestroy()
-    {
-        TestController.OnDirectionChange -= UpdateDirection;
-    }
-
-    private void UpdateDirection(Vector2 newDirection)
-    {
-        ClearRangeBoxes();
-        lookDirection = newDirection;
-        ShowAttackRange(lookDirection);
-    }
-
-    private void ClearRangeBoxes()
-    {
-        foreach (var rangeBox in rangeBoxes)
-        {
-            Destroy(rangeBox);
-        }
-        rangeBoxes.Clear();
-    }
-
-    public void Attack(Vector2 direction)
-    {
-        CheckAttackRange(direction);
-        ClearRangeBoxes();
-    }
-
-
-    private void CheckAttackRange(Vector2 direction)
-    {
-        Vector2 position = transform.position;
-        RaycastHit2D[] hits = Physics2D.RaycastAll(position, direction, range, targetlayer);
-        foreach (RaycastHit2D hit in hits)
-        {
-            if (hit.collider != null)
-            {
-                Debug.Log("맞았습니다! 대상: " + hit.collider.gameObject.name);
-            }
-        }
-
-    }
-
-    private void ShowAttackRange(Vector2 direction)
+    public override void ShowAttackRange(Vector2 direction)
     {
         for (float i = 1; i <= range; i++)
         {
@@ -70,14 +24,25 @@ public class Gun : MonoBehaviour
         }
     }
 
-    void OnDrawGizmos()
+    protected override int CalculateFinalDamage(CharacterStatsSO attackerStats, CharacterStatsSO defenderStats, Vector2 attackDirection, Vector2 targetPosition)
     {
-        Gizmos.color = Color.red;
-        DrawAttackRay(lookDirection);
-    }
+        int baseDamage = DamageCalculation(attackerStats, defenderStats);
+        float damageModifier;
 
-    private void DrawAttackRay(Vector2 direction)
-    {
-        Gizmos.DrawLine(transform.position, (Vector2)transform.position + direction * range);
+        if(hitCount == 0)
+        {
+            damageModifier = UnityEngine.Random.Range(0.9f, 1.0f);
+        }
+        else if (hitCount ==1 )
+        {
+            damageModifier = UnityEngine.Random.Range(0.65f, 0.75f);
+        }
+        else
+        {
+            damageModifier = 0.5f;
+        }
+
+        hitCount++;
+        return Mathf.RoundToInt(baseDamage * damageModifier);
     }
 }

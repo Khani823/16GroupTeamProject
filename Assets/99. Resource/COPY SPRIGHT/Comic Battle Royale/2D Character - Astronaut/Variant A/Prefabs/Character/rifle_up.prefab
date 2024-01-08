@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3171069239732522100}
   - component: {fileID: 3171069239732522101}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: shadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,9 +94,9 @@ GameObject:
   m_Component:
   - component: {fileID: 3171069240516269644}
   - component: {fileID: 3171069240516269647}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: rifle_up
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -182,7 +182,7 @@ GameObject:
   - component: {fileID: 3171069240769851787}
   - component: {fileID: 3171069240769851785}
   - component: {fileID: 3171069240769851784}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: muzzle_flash_rifle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -276,6 +276,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &3171069240907081255
 GameObject:
   m_ObjectHideFlags: 0
@@ -286,7 +287,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3171069240907081252}
   - component: {fileID: 3171069240907081253}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: weapon_rifle_up
   m_TagString: Untagged
   m_Icon: {fileID: 0}

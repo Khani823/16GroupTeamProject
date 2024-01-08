@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 2871517395753199401}
   - component: {fileID: 2871517395753199400}
   - component: {fileID: 2871517395753199399}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: run_up
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -106,6 +106,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &2871517396042712329
 GameObject:
   m_ObjectHideFlags: 0
@@ -116,7 +117,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2871517396042712330}
   - component: {fileID: 2871517396042712331}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: shadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}

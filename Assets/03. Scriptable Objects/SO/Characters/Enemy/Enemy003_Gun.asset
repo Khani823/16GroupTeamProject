@@ -9,14 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8be323efc2a71414498d934aca6fd26a, type: 3}
-  m_Name: Item_Weapon_ 1
+  m_Script: {fileID: 11500000, guid: 90ea1d5656855e5499e4d29e04e59f01, type: 3}
+  m_Name: Enemy003_Gun
   m_EditorClassIdentifier: 
-  price: 0
-  isEquiped: 0
-  _id: 0
-  _name: 
-  _tooltip: 
-  _iconSprite: {fileID: 21300000, guid: bb1bdd56c1352fb419836f9c2b0bf4bf, type: 3}
-  _maxDurability: 100
-  _damage: 1
+  hp: 0
+  atk: 0
+  def: 0
+  weaponAttack: {fileID: -810951820394607998, guid: d39526699aac4c2fb9b6dd5d737f5808, type: 3}
+  ID: 3

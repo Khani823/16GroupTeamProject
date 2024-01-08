@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1501000157181493717}
   - component: {fileID: 1501000157181493716}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: hammer_idle_side
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -97,7 +97,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1501000157329532323}
   - component: {fileID: 1501000157329532320}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: weapon_hammer_idle_side
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -181,7 +181,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1501000157549141647}
   - component: {fileID: 1501000157549141644}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: shadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -265,7 +265,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1501000158286547390}
   - component: {fileID: 1501000158286547391}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: hammer_idle_side-overlay
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 6743227759511787506}
   - component: {fileID: 6743227759511787501}
   - component: {fileID: 6743227759511787500}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: idle_up
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -106,6 +106,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &6743227760587641132
 GameObject:
   m_ObjectHideFlags: 0
@@ -116,7 +117,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6743227760587641133}
   - component: {fileID: 6743227760587641138}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: shadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}

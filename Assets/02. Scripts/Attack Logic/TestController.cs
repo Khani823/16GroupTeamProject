@@ -6,7 +6,7 @@ using UnityEngine;
 public class TestController : MonoBehaviour
 {
     public static event Action<Vector2> OnDirectionChange;
-    public Sword  sword;
+    public WeaponAttack curWeapon;
     private Vector2 lookDirection = Vector2.up;
 
     void Update()
@@ -38,9 +38,9 @@ public class TestController : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            sword.Attack(lookDirection);
+            curWeapon.Attack(lookDirection);
             Debug.Log("attack");
         }
-        sword.lookDirection = lookDirection;
+        curWeapon.lookDirection = lookDirection;
     }
 }

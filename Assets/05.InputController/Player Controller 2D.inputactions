@@ -33,13 +33,13 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "Inventory",
+                    "name": "Attack",
                     "type": "Button",
-                    "id": "45b7c9e4-4cd6-4c16-93f3-bf708ede55eb",
+                    "id": "a45fde72-2b72-49dd-8caf-b17bf36e12cd",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": false
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -122,12 +122,12 @@
                 },
                 {
                     "name": "",
-                    "id": "debbfea8-5b59-4576-abd7-ae38ba78e77d",
-                    "path": "<Keyboard>/tab",
+                    "id": "d71e63c4-48c4-402c-bfe5-a35b41f8de27",
+                    "path": "<Keyboard>/space",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Inventory",
+                    "action": "Attack",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
