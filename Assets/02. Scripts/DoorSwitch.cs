@@ -12,13 +12,17 @@ public class DoorSwitch : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0) && IsPlayerInInteractionRange())
         {
+            //Debug.Log("마우스 클릭");
             RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
             if (hit.collider != null && hit.collider.gameObject == gameObject) // 스위치를 클릭했는지 확인
             {
+                //Debug.Log("오브젝트 감지: " + hit.collider.gameObject.name);
+                //Debug.Log("스위치 클릭");
                 linkedDoor.ToggleDoor();
             }
         }
     }
+
 
     private bool IsPlayerInInteractionRange()
     {
@@ -26,6 +30,7 @@ public class DoorSwitch : MonoBehaviour
         if (player != null)
         {
             float distance = Vector2.Distance(player.transform.position, transform.position);
+            //Debug.Log("거리: " + distance);
             return distance <= interactionDistance;
         }
         return false;
