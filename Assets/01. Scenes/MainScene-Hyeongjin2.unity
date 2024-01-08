@@ -1738,7 +1738,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slotsHolder: {fileID: 770724946}
-  itemToAdd: {fileID: 11400000, guid: 64612b0dcc0409940960ca3df367a27d, type: 2}
+  itemToAdd: {fileID: 0}
   itemToRemove: {fileID: 0}
   items:
   - item: {fileID: 11400000, guid: 6a6f5539bd1f61a47ace437ce694e415, type: 2}
@@ -1752,6 +1752,12 @@ MonoBehaviour:
   - item: {fileID: 11400000, guid: 36bcd2f6ad81de641a46b271b1d349a7, type: 2}
     quantity: 1
   - item: {fileID: 11400000, guid: a30fcc93fa984b44da987471d96d2364, type: 2}
+    quantity: 1
+  - item: {fileID: 11400000, guid: 67096d8d3be98644cb45f0372a98f3f6, type: 2}
+    quantity: 1
+  - item: {fileID: 11400000, guid: 1a747373b4d1c0046a4ca0511a0cd85c, type: 2}
+    quantity: 1
+  - item: {fileID: 11400000, guid: 67de2aa2e8818f7469af1fa54e73a3c0, type: 2}
     quantity: 1
   slots: []
   stat: {fileID: 594912134}
@@ -3212,6 +3218,30 @@ PrefabInstance:
     - target: {fileID: 859099814312814666, guid: 0c48a0e600b3486488400b83426594e7, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1701425218129432213, guid: 0c48a0e600b3486488400b83426594e7, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1701425218129432213, guid: 0c48a0e600b3486488400b83426594e7, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1701425218129432213, guid: 0c48a0e600b3486488400b83426594e7, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1701425218129432213, guid: 0c48a0e600b3486488400b83426594e7, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1701425218129432213, guid: 0c48a0e600b3486488400b83426594e7, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 1701425218129432213, guid: 0c48a0e600b3486488400b83426594e7, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 2635925674401514903, guid: 0c48a0e600b3486488400b83426594e7, type: 3}
       propertyPath: m_Pivot.x

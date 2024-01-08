@@ -16,8 +16,8 @@ MonoBehaviour:
   itemIcon: {fileID: 21300000, guid: a1f270ff46445564e9afa40d0d9574db, type: 3}
   price: 0
   isStackable: 0
-  tooltip: 
-  type: 5
-  isEquiped: 0
+  tooltip: "\uBC29\uC5B4\uB825 3"
+  type: 2
+  IsEquipped: 0
   Damage: 0
   Defense: 3
