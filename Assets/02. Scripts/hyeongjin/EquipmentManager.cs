@@ -9,6 +9,9 @@ public class EquipmentManager : MonoBehaviour
 {
     public static EquipmentManager Instance;
     public ItemSlot itemslot;
+    public InventoryUI inventoryUI;
+    //public StatHandler statHandler;
+
 
     public void Awake()
     {
@@ -47,6 +50,7 @@ public class EquipmentManager : MonoBehaviour
         {
             onEquipmentChanged.Invoke(newitem, olditem);
         }
+
 
     }
 

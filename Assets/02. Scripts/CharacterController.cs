@@ -9,8 +9,15 @@ public class CharacterController : MonoBehaviour
     public event Action<Vector2> OnLookEvent;
     public event Action<Vector2> OnMouseMoveEvent;
 
+    PlayerStat _stat;
 
-    public void CallMoveEvent(Vector2 direction)
+    void Start()
+    {
+        //기본 스탯 정보 가져오기
+        _stat = gameObject.GetComponent<PlayerStat>();
+    }
+
+        public void CallMoveEvent(Vector2 direction)
     {
         OnMoveEvent?.Invoke(direction);
     }
