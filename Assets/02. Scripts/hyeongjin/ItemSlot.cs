@@ -61,6 +61,10 @@ public class ItemSlot : MonoBehaviour, IPointerExitHandler, IPointerEnterHandler
                 EquipMark.SetActive(false);
             }
         }
+        else
+        {
+            EquipMark.SetActive(false);
+        }
 
     }
     public void Popup()

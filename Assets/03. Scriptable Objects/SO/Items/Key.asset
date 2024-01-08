@@ -17,4 +17,5 @@ MonoBehaviour:
   price: 0
   isStackable: 0
   tooltip: "\uC5F4\uC1E0"
-  type: 7
+  type: 4
+  IsEquipped: 0

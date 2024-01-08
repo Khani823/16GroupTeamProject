@@ -28,6 +28,11 @@ public class PlayerStat1 : MonoBehaviour
         {
             TakeDamage(10);
         }
+
+        if (Input.GetKeyDown(KeyCode.Y))
+        {
+            SpendMana(10);
+        }    
     }
     void OnEquipmentChanged(ItemClass newitem, ItemClass olditem)
     {
@@ -55,6 +60,17 @@ public class PlayerStat1 : MonoBehaviour
         if (currentHealth < 0)
         {
             Die();
+        }
+    }
+    public void SpendMana(int spendmana)
+    {
+        spendmana = Mathf.Clamp(spendmana, 0, int.MaxValue);
+        currentMana -= spendmana;
+        Debug.Log(transform.name + "spend" + spendmana + "mana");
+
+        if (currentMana < 0)
+        {
+            currentMana = 0;
         }
     }
 
