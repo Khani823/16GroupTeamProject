@@ -23,7 +23,7 @@ public class PlayerAttackController : MonoBehaviour
         if (currentWeapon != null)
         {
             currentWeapon.Attack(atkDirection);
-        }
+	        }
     }
     // Additional Logics to be Updated (if required)
 }

@@ -11,9 +11,11 @@ public abstract class WeaponAttack : MonoBehaviour
     public Vector2 lookDirection;
     public GameObject rangeBox;
     protected List<GameObject> rangeBoxes = new List<GameObject>();
-    private PlayerController2D directionToLook;
-    private PlayerController2D attack;
-    private TurnManager turnManager;
+    protected PlayerController2D directionToLook;
+    protected PlayerController2D attack;
+
+    protected TurnManager turnManager;
+
 
     protected virtual void Awake()
     {
@@ -23,12 +25,10 @@ public abstract class WeaponAttack : MonoBehaviour
         directionToLook.Player.Move.canceled += OnMoveCanceled; // 구독 해제
         attack.Player.Attack.performed += OnAttackPerformed;
         attack.Player.Attack.canceled += OnAttackCanceled;
-    }
-
-    protected virtual void Start()
-    {
         turnManager = FindObjectOfType<TurnManager>();
     }
+
+
 
     private void OnAttackPerformed(InputAction.CallbackContext obj)
     {
@@ -78,7 +78,6 @@ public abstract class WeaponAttack : MonoBehaviour
     {
         CheckAttackRange(direction);
         ClearRangeBoxes();
-        turnManager.NextTurn();
     }
 
     protected virtual void CheckAttackRange(Vector2 direction)
@@ -99,6 +98,8 @@ public abstract class WeaponAttack : MonoBehaviour
                     int damage = CalculateFinalDamage(attackerStat.stats, defenderStat.stats, direction, targetPosition);
                     damageableObject.TakeDamage(damage);
                     Debug.Log($"맞은 대상: {hit.collider.gameObject.name}, 받은 대미지: {damage}");
+                    turnManager.NextTurn();
+
                 }
             }
 		}

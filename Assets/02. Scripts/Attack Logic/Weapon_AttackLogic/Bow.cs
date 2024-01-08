@@ -55,7 +55,8 @@ public class Bow : WeaponAttack
                 Vector2 targetPosition = hit.collider.transform.position;
                 int damage = CalculateFinalDamage(attackerStat.stats, defenderStat.stats, direction, targetPosition);
                 damageableObject.TakeDamage(damage);
-                Debug.Log($"¸ÂÀº ´ë»ó: {hit.collider.gameObject.name}, ¹ÞÀº ´ë¹ÌÁö: {damage}");
+                Debug.Log($"ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½: {hit.collider.gameObject.name}, ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½: {damage}");
+                turnManager.NextTurn();
             }
         }
         
