@@ -5,6 +5,8 @@ using static UnityEditor.PlayerSettings;
 
 public class UiManager : MonoBehaviour
 {
+    public static UiManager instance;
+
     public Text levelText;
     public Text EXPText;
     public Text HPText;
@@ -12,7 +14,6 @@ public class UiManager : MonoBehaviour
     public Text ATTText;
     public Text DEFText;
     public Text GoldText;
-
 
     [SerializeField]
     private Slider hpBar;
@@ -38,15 +39,23 @@ public class UiManager : MonoBehaviour
         UpdateUI();
     }
 
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            TakeDamage(10);
-            UseSkill(10);
-            GainExperience(10);
-        }
-    }
+    //void Update()
+    //{
+    //    if (Input.GetKeyDown(KeyCode.Space))
+    //    {
+    //        // 임시로 스페이스로 테스트했습니다
+    //        // 메서드 끌어다 쓰면 될 거 같아요
+
+    //        // 플레이어가 피해를 입었을 때
+    //        TakeDamage(10);
+
+    //        // 플레이어가 스킬을 사용 했을 때
+    //        UseSkill(10);
+
+    //        // 플레이어가 킬을 했을 때
+    //        GainExperience(10);
+    //    }
+    //}
 
     private void UpdateUI()
     {
@@ -63,7 +72,7 @@ public class UiManager : MonoBehaviour
         levelText.text = "Lv: " + level.ToString();
     }
 
-    // 플레이어가 공격당할 때 호출되는 메서드
+    // 플레이어가 공격 당할 때 호출되는 메서드
     public void TakeDamage(int damageAmount)
     {
         HP -= damageAmount;
@@ -92,7 +101,7 @@ public class UiManager : MonoBehaviour
         }
     }
 
-    // 킬이 일어났을 때 호출되는 메서드
+    // 킬을 했을때 호출되는 메서드
     public void GainExperience(int xp)
     {
         exp += xp;

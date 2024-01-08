@@ -8,7 +8,7 @@ public class MonsterStat : Stats
     // Start is called before the first frame update
     void Start()
     {
-        _stat = gameObject.GetComponent<MonsterStat>();
+        //_stat = gameObject.GetComponent<MonsterStat>();
 
     }
 

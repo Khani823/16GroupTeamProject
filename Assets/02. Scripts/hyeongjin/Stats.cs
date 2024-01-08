@@ -22,7 +22,7 @@ public class Stats
     protected float _moveSpeed;
     [SerializeField]
     private int BaseValue;
-
+        
     // 멤버 프로퍼티
     public int Level { get { return _level; } set { _level = value; } }
     public int Hp { get { return _hp; } set { _hp = value; } }
@@ -72,7 +72,7 @@ public class Stats
         Hp += 10;
         Attack += 3;
         Defense += 2;
-        MoveSpeed += 0.5f;
+        MoveSpeed += 0.5f;       
     }
 
 }
