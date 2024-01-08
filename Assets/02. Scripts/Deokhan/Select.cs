@@ -1,19 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Select : MonoBehaviour
 {
+    
     public float movementRange = 2f; // 이동 가능한 범위
+    public float moveSpeed = 5f; // 이동 속도
 
+    private GameObject Circle;
     private GameObject selectedObject;
     private Vector2 initialPosition;
+    private Vector2 targetPosition;
+    private bool isMoving = false;
 
     void Update()
     {
         // 마우스 왼쪽 버튼이 클릭되었을 때
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && !isMoving)
         {
+            
             // 마우스 위치를 2D 좌표로 변환
             Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
@@ -38,38 +45,71 @@ public class Select : MonoBehaviour
 
                 // 이동 가능한 범위를 시각적으로 표현
                 DrawMovementRange(selectedObject.transform.position, movementRange);
+
+                GameObject.Find("Player").transform.GetChild(0).gameObject.SetActive(true);
             }
         }
 
         // 마우스 오른쪽 버튼이 클릭되었을 때
-        if (Input.GetMouseButtonDown(1) && selectedObject != null)
+        if (Input.GetMouseButtonDown(1) && selectedObject != null && !isMoving)
         {
+            
             // 마우스 위치를 2D 좌표로 변환
             Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-            // 선택된 오브젝트 이동
-            MoveObject(mousePosition);
+            GameObject.Find("Player").transform.GetChild(0).gameObject.SetActive(false);
+            // 선택된 오브젝트 이동 시작
+            StartMovingObject(mousePosition);
+            
+        }
+
+        // 오브젝트 이동 중일 때
+        if (isMoving)
+        {
+            // 보간을 사용하여 오브젝트를 천천히 이동
+            selectedObject.transform.position = Vector2.Lerp(selectedObject.transform.position, targetPosition, Time.deltaTime * moveSpeed);
+
+            // 이동이 거의 완료되면 이동 종료
+            if (Vector2.Distance(selectedObject.transform.position, targetPosition) < 0.1f)
+            {
+                isMoving = false;
+            }
         }
     }
 
-    void MoveObject(Vector2 targetPosition)
+    void StartMovingObject(Vector2 targetPosition)
     {
         // 이동 가능한 범위 내에서만 이동 처리
         float distance = Vector2.Distance(initialPosition, targetPosition);
         if (distance <= movementRange)
         {
-            selectedObject.transform.position = targetPosition;
+            // 이동 시작
+            this.targetPosition = targetPosition;
+            isMoving = true;
         }
-
-        // 이동 후 초기화
-        selectedObject = null;
-        initialPosition = Vector2.zero;
     }
 
     void DrawMovementRange(Vector2 center, float radius)
     {
-        // 이동 가능한 범위를 원으로 시각적으로 표현
-        DebugDraw.Circle(center, radius, Color.green, 0.1f);
+        int segments = 36;
+        float angleIncrement = 360f / segments;
+
+        for (int i = 0; i < segments; i++)
+        {
+            float angle1 = Mathf.Deg2Rad * i * angleIncrement;
+            float angle2 = Mathf.Deg2Rad * (i + 1) * angleIncrement;
+
+            Vector2 point1 = center + new Vector2(Mathf.Cos(angle1) * radius, Mathf.Sin(angle1) * radius);
+            Vector2 point2 = center + new Vector2(Mathf.Cos(angle2) * radius, Mathf.Sin(angle2) * radius);
+
+            Debug.DrawLine(point1, point2, Color.green, 0.1f);
+        }
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(transform.position, movementRange);
     }
 }
 
