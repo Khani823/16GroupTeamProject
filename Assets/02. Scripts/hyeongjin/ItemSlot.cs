@@ -42,18 +42,26 @@ public class ItemSlot : MonoBehaviour, IPointerExitHandler, IPointerEnterHandler
 
 
 
-
-    public void ChangeEquip(ItemClass items)
+    public void Update()
     {
-        if (items.IsEquipped == true)
+        ChangeEquip();
+    }
+
+    public void ChangeEquip()
+    {
+        if (item != null) 
         {
-            EquipMark.SetActive(true);
-            
+            if (item.IsEquipped == true)
+            {
+                EquipMark.SetActive(true);
+
+            }
+            else
+            {
+                EquipMark.SetActive(false);
+            }
         }
-        else
-        {
-            EquipMark.SetActive(false);
-        }
+
     }
     public void Popup()
     {

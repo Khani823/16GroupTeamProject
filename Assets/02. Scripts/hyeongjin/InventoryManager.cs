@@ -52,6 +52,7 @@ public class InventoryManager : MonoBehaviour
                 slots[i].transform.GetChild(0).GetComponent<Image>().sprite = items[i].GetItem().itemIcon;
                 slots[i].transform.GetChild(0).GetComponent<Image>().enabled = true;
                 slots[i].GetComponent<ItemSlot>().item = items[i].GetItem();
+                slots[i].GetComponent<ItemSlot>().item.IsEquipped = items[i].GetItem().IsEquipped;
                 slots[i].GetComponent<ItemSlot>().index = i;
                 if (items[i].GetItem().isStackable)
                 {

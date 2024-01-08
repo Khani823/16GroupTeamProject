@@ -33,12 +33,8 @@ public class PopupEquip : MonoBehaviour
             {
                 
                 equipmentManager.UnEquip(inventoryManager.items[slot.index].GetItem().GetEquipment());
-                //Debug.Log(inventoryManager.items[slot.index].GetItem().isEquiped);
-                slot.ChangeEquip(inventoryManager.items[slot.index].GetItem());
-                //for (int i = 0; i < inventoryManager.items.Count; i++)
-                //{
-                //    slot.ChangeEquip(inventoryManager.items[i].GetItem());
-                //}
+                
+                slot.ChangeEquip();
             });
 
         }
@@ -50,12 +46,7 @@ public class PopupEquip : MonoBehaviour
             {
                 
                 equipmentManager.Equip(inventoryManager.items[slot.index].GetItem().GetEquipment());
-                //Debug.Log(inventoryManager.items[slot.index].GetItem().isEquiped);
-                slot.ChangeEquip(inventoryManager.items[slot.index].GetItem());
-                //for (int i = 0; i < inventoryManager.items.Count; i++)
-                //{
-                //    slot.ChangeEquip(inventoryManager.items[i].GetItem());
-                //}
+                slot.ChangeEquip();
             });
         }
     }
