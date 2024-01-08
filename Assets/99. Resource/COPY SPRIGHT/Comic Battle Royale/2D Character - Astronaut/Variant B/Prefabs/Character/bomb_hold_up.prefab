@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1718249276534984047}
   - component: {fileID: 1718249276534984040}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: shadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 1718249276829776090}
   - component: {fileID: 1718249276829776068}
   - component: {fileID: 1718249276829776091}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: bomb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -189,6 +189,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1718249278459456767
 GameObject:
   m_ObjectHideFlags: 0
@@ -200,9 +201,9 @@ GameObject:
   - component: {fileID: 1718249278459456762}
   - component: {fileID: 1718249278459456761}
   - component: {fileID: 1718249278459456760}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: bomb_hold_up
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -296,3 +297,4 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

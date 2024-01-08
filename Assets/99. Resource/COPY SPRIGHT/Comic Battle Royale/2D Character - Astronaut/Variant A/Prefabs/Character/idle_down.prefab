@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6323616739775396547}
   - component: {fileID: 6323616739775396544}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: shadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,9 +95,9 @@ GameObject:
   - component: {fileID: 6323616739901478145}
   - component: {fileID: 6323616739901478144}
   - component: {fileID: 6323616739901478147}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: idle_down
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -190,3 +190,4 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

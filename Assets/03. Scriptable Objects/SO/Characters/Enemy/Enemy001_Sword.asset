@@ -9,9 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 34dd8d059c89e4d4ca676ce43a4f9baf, type: 3}
-  m_Name: Enemy0003_Gun
+  m_Script: {fileID: 11500000, guid: 90ea1d5656855e5499e4d29e04e59f01, type: 3}
+  m_Name: Enemy001_Sword
   m_EditorClassIdentifier: 
   hp: 10
-  atk: 2
+  atk: 0
   def: 0
+  weaponAttack: {fileID: 6165766414514967186, guid: 2b7276e6a28f4e46bfa50a6ddbefbbd7, type: 3}
+  ID: 1

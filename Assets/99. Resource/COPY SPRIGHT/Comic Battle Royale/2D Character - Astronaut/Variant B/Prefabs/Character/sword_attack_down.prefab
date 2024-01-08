@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 3266063721620778289}
   - component: {fileID: 3266063721620778290}
   - component: {fileID: 3266063721620778291}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: sword_attack_down
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -108,6 +108,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &3266063721865531086
 GameObject:
   m_ObjectHideFlags: 0
@@ -119,7 +120,7 @@ GameObject:
   - component: {fileID: 3266063721865531085}
   - component: {fileID: 3266063721865531083}
   - component: {fileID: 3266063721865531084}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: weapon_sword_down
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -213,6 +214,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &3266063722904449079
 GameObject:
   m_ObjectHideFlags: 0
@@ -223,7 +225,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3266063722904449078}
   - component: {fileID: 3266063722904449077}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: shadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -308,7 +310,7 @@ GameObject:
   - component: {fileID: 3266063723408077097}
   - component: {fileID: 3266063723408077095}
   - component: {fileID: 3266063723408077096}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: sword_attack_down-overlay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -402,3 +404,4 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

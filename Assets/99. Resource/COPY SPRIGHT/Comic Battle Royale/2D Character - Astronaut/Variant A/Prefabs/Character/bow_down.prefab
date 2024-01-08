@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5107202913589135719}
   - component: {fileID: 5107202913589135769}
   - component: {fileID: 5107202913589135768}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: bow_down-overlay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -117,7 +117,7 @@ GameObject:
   - component: {fileID: 5107202913706751645}
   - component: {fileID: 5107202913706751647}
   - component: {fileID: 5107202913706751646}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: weapon_bow_down
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -223,9 +223,9 @@ GameObject:
   - component: {fileID: 5107202914049814878}
   - component: {fileID: 5107202914049814877}
   - component: {fileID: 3922269693012646803}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: bow_down
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -329,7 +329,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5107202914831466296}
   - component: {fileID: 5107202914831466297}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: shadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -225,6 +225,7 @@ GameObject:
   - component: {fileID: -9193024203161331179}
   - component: {fileID: -3428558821153244538}
   - component: {fileID: -2401351720778351908}
+  - component: {fileID: 2777845848814625580}
   m_Layer: 8
   m_Name: bow_down
   m_TagString: Enemy
@@ -314,7 +315,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 468e0c3594b47cb43899206ca1d4f3f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stats: {fileID: 11400000, guid: bfb833106605eb64b917d0c1d8657e2f, type: 2}
+  stats: {fileID: 11400000, guid: 915fae3885f43b542aac244db98ee353, type: 2}
 --- !u!61 &-3428558821153244538
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -387,6 +388,25 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &2777845848814625580
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5107202914049814876}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb1dd8d5574da4032b1844968aed076f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  range: 4
+  targetlayer:
+    serializedVersion: 2
+    m_Bits: 128
+  lookDirection: {x: 0, y: 0}
+  rangeBox: {fileID: 7637109694579291665, guid: 138c28b863658419592e7fa3e5627573, type: 3}
+  rangeShower: {fileID: 8839992865166862226, guid: 71e1a4ebed04d43249f0c9ad6abdbfd2, type: 3}
 --- !u!1 &5107202914831466247
 GameObject:
   m_ObjectHideFlags: 0

@@ -265,6 +265,7 @@ GameObject:
   - component: {fileID: 6614025896951162357}
   - component: {fileID: -1424929563725879793}
   - component: {fileID: 6446824911912578759}
+  - component: {fileID: 6165766414514967186}
   m_Layer: 8
   m_Name: sword_idle_down
   m_TagString: Enemy
@@ -354,7 +355,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 468e0c3594b47cb43899206ca1d4f3f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stats: {fileID: 11400000, guid: 50a043c30b0e63f4785a59b824488e5b, type: 2}
+  stats: {fileID: 11400000, guid: 986fdec936dbdeb4f80f49969f9403ee, type: 2}
 --- !u!61 &-1424929563725879793
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -427,3 +428,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &6165766414514967186
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2546914348052900014}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fb2bdaf129a0477eab5da6cee54a112, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  range: 1
+  targetlayer:
+    serializedVersion: 2
+    m_Bits: 128
+  lookDirection: {x: 0, y: 0}
+  rangeBox: {fileID: 7637109694579291665, guid: 138c28b863658419592e7fa3e5627573, type: 3}

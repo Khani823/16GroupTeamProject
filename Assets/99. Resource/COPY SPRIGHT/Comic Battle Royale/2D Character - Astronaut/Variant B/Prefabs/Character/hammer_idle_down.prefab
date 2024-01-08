@@ -265,6 +265,7 @@ GameObject:
   - component: {fileID: -7007215683112551162}
   - component: {fileID: -7916363997808016907}
   - component: {fileID: -6307195091181366976}
+  - component: {fileID: -9033494100011983011}
   m_Layer: 8
   m_Name: hammer_idle_down
   m_TagString: Enemy
@@ -354,7 +355,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 468e0c3594b47cb43899206ca1d4f3f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stats: {fileID: 11400000, guid: eb61c7dba6f4c284faac0217030e9581, type: 2}
+  stats: {fileID: 11400000, guid: 111a8c2b166c04f4495bed1a0ebf7ca5, type: 2}
 --- !u!61 &-7916363997808016907
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -427,3 +428,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &-9033494100011983011
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5987468569922630406}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9006d9bfafe474c068aee74a69934e5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  range: 2
+  targetlayer:
+    serializedVersion: 2
+    m_Bits: 128
+  lookDirection: {x: 0, y: 0}
+  rangeBox: {fileID: 7637109694579291665, guid: 138c28b863658419592e7fa3e5627573, type: 3}

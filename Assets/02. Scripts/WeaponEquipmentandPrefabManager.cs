@@ -13,24 +13,20 @@ public class WeaponEquipmentandPrefabManager : MonoBehaviour
     private GameObject currentWeaponman;
 
     public void ChangeCharacterPrefab(GameObject newCharacterPrefab)
-    { 
+    {
         if (currentWeaponman != null)
         {
-            WeaponAttack currentWeaponAttack = currentWeaponman.GetComponentInChildren<WeaponAttack>();
-            if(currentWeaponAttack != null)
-            {
-                currentWeaponAttack.ClearRangeBoxes();
-	        }
-            Destroy(currentWeaponman); 
-	    }
+            Debug.Log("Destroying current weapon: " + currentWeaponman.name);
+            Destroy(currentWeaponman);
+        }
 
         currentWeaponman = Instantiate(newCharacterPrefab, transform.position, Quaternion.identity, transform);
-        WeaponAttack weaponAttack = currentWeaponman.GetComponentInChildren<WeaponAttack>();
-        
-	    PlayerAttackController playerAttackController = FindObjectOfType<PlayerAttackController>();
-        if (playerAttackController != null)
+        Debug.Log("New weapon equipped: " + currentWeaponman.name);
+
+        PlayerScript playerScript = FindObjectOfType<PlayerScript>();
+        if (playerScript != null)
         {
-            playerAttackController.SetCurrentWeapon(weaponAttack);
+            playerScript.OnWeaponChanged();
         }
     }
 

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6033194366792833339}
   - component: {fileID: 9015531626135036034}
   - component: {fileID: -1126368189553002093}
+  - component: {fileID: -810951820394607998}
   m_Layer: 8
   m_Name: gun_down
   m_TagString: Enemy
@@ -102,7 +103,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 468e0c3594b47cb43899206ca1d4f3f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stats: {fileID: 11400000, guid: 19819bef76c54e344827e3f1525c2ca8, type: 2}
+  stats: {fileID: 11400000, guid: b82ba72c75064524a9ef30d02dbc201b, type: 2}
 --- !u!61 &9015531626135036034
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -175,6 +176,24 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &-810951820394607998
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4585321652342069593}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbc88cf20e6c94a33aaaf120bd0b4a48, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  range: 4
+  targetlayer:
+    serializedVersion: 2
+    m_Bits: 128
+  lookDirection: {x: 0, y: 0}
+  rangeBox: {fileID: 7637109694579291665, guid: 138c28b863658419592e7fa3e5627573, type: 3}
 --- !u!1 &4585321652496595601
 GameObject:
   m_ObjectHideFlags: 0

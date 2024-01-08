@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5987468568136692905}
   - component: {fileID: 5987468568136692904}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: shadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5987468568376323086}
   - component: {fileID: 5987468568376323073}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: weapon_hammer_idle_down
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -178,7 +178,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5987468568869104269}
   - component: {fileID: 5987468568869104268}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: hammer_idle_down-overlay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -263,9 +263,9 @@ GameObject:
   - component: {fileID: 5987468569922629880}
   - component: {fileID: 5987468569922629881}
   - component: {fileID: -1008568694468083187}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: hammer_idle_down
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

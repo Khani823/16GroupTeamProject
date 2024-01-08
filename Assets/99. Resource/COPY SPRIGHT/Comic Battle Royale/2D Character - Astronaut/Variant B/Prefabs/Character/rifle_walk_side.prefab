@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4576720256078129359}
   - component: {fileID: 4576720256078129356}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: shadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4576720256893806288}
   - component: {fileID: 4576720256893806289}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: weapon_rifle_side
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -179,7 +179,7 @@ GameObject:
   - component: {fileID: 4576720257309098267}
   - component: {fileID: 4576720257309098265}
   - component: {fileID: 4576720257309098264}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: muzzle_flash_rifle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -273,6 +273,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &4576720257509733879
 GameObject:
   m_ObjectHideFlags: 0
@@ -284,7 +285,7 @@ GameObject:
   - component: {fileID: 4576720257509733876}
   - component: {fileID: 4576720257509733874}
   - component: {fileID: 4576720257509733877}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: rifle_walk_side-overlay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -378,6 +379,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &4576720257626972010
 GameObject:
   m_ObjectHideFlags: 0
@@ -389,9 +391,9 @@ GameObject:
   - component: {fileID: 4576720257626972009}
   - component: {fileID: 4576720257626972008}
   - component: {fileID: 4576720257626972011}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: rifle_walk_side
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -487,3 +489,4 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

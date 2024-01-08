@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6069205521395048771}
   - component: {fileID: 6069205521395048781}
   - component: {fileID: 6069205521395048770}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: bomb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -105,6 +105,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &6069205522293079217
 GameObject:
   m_ObjectHideFlags: 0
@@ -115,7 +116,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6069205522293079216}
   - component: {fileID: 6069205522293079219}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: shadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -200,9 +201,9 @@ GameObject:
   - component: {fileID: 6069205523221616515}
   - component: {fileID: 6069205523221616512}
   - component: {fileID: 6069205523221616513}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: bomb_walk_down
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -296,3 +297,4 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

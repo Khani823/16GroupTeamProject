@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 3803738606609729012}
   - component: {fileID: 3803738606609729013}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: bow_up
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -97,7 +97,7 @@ GameObject:
   - component: {fileID: 3803738606978147725}
   - component: {fileID: 3803738606978147723}
   - component: {fileID: 3803738606978147724}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: weapon_bow_up
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -191,6 +191,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &3803738607889736341
 GameObject:
   m_ObjectHideFlags: 0
@@ -201,7 +202,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3803738607889736340}
   - component: {fileID: 3803738607889736339}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: shadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}

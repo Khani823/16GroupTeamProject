@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 4585321652342069599}
   - component: {fileID: 4585321652342069598}
   - component: {fileID: -7769777879382094518}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: gun_down
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -116,7 +116,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4585321652496595606}
   - component: {fileID: 4585321652496595607}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: shadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -200,7 +200,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4585321653222647632}
   - component: {fileID: 4585321653222647633}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: weapon_gun_down
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -285,7 +285,7 @@ GameObject:
   - component: {fileID: 4585321653714486885}
   - component: {fileID: 4585321653714486875}
   - component: {fileID: 4585321653714486874}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: muzzle_flash_gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}

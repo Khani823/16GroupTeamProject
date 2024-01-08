@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2546914346728719589}
   - component: {fileID: 2546914346728719588}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: shadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2546914347582102778}
   - component: {fileID: 2546914347582102777}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: weapon_sword_idle_down
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -178,7 +178,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2546914347818034713}
   - component: {fileID: 2546914347818034712}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: sword_idle_down-overlay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -263,9 +263,9 @@ GameObject:
   - component: {fileID: 2546914348052900012}
   - component: {fileID: 2546914348052900013}
   - component: {fileID: 8886485535061732337}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: sword_idle_down
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

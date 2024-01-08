@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3912641672645205030}
   - component: {fileID: 3912641672645205028}
   - component: {fileID: 3912641672645205031}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: muzzle_flash_gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -105,6 +105,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &3912641672701540813
 GameObject:
   m_ObjectHideFlags: 0
@@ -115,7 +116,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3912641672701540802}
   - component: {fileID: 3912641672701540803}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: weapon_gun_up
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -199,7 +200,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3912641673226947527}
   - component: {fileID: 3912641673226947524}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: shadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -284,9 +285,9 @@ GameObject:
   - component: {fileID: 3912641673502032639}
   - component: {fileID: 3912641673502032638}
   - component: {fileID: 3912641673502032633}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: gun_walk_up
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -381,3 +382,4 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

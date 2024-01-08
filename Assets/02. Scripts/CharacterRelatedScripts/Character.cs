@@ -9,6 +9,11 @@ public abstract class Character : MonoBehaviour, IDamageable
     private CharacterStatsSO currentStats;
     protected TurnManager turnManager;
 
+
+    protected virtual void Awake()
+    {
+
+    }
     protected virtual void Start()
     {
         turnManager = FindObjectOfType<TurnManager>();

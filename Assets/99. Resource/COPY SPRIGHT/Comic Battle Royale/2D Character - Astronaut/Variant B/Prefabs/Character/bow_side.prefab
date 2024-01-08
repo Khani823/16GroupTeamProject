@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3781625300610974884}
   - component: {fileID: 3781625300610974886}
   - component: {fileID: 3781625300610974887}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: bow_side-overlay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -105,6 +105,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &3781625300802531157
 GameObject:
   m_ObjectHideFlags: 0
@@ -115,9 +116,9 @@ GameObject:
   m_Component:
   - component: {fileID: 3781625300802531159}
   - component: {fileID: 3781625300802531156}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: bow_side
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -203,7 +204,7 @@ GameObject:
   - component: {fileID: 3781625300938992877}
   - component: {fileID: 3781625300938992879}
   - component: {fileID: 3781625300938992876}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: weapon_bow_side
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -297,6 +298,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &3781625301211388689
 GameObject:
   m_ObjectHideFlags: 0
@@ -307,7 +309,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3781625301211388688}
   - component: {fileID: 3781625301211388691}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: shadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}

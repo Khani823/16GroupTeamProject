@@ -11,67 +11,13 @@ public abstract class WeaponAttack : MonoBehaviour
     public Vector2 lookDirection;
     public GameObject rangeBox;
     protected List<GameObject> rangeBoxes = new List<GameObject>();
-    protected PlayerController2D directionToLook;
-    protected PlayerController2D attack;
 
     protected TurnManager turnManager;
 
 
     protected virtual void Awake()
     {
-        directionToLook = new PlayerController2D();
-        attack = new PlayerController2D();
-        directionToLook.Player.Move.performed += OnMovePerformed; // 구독
-        directionToLook.Player.Move.canceled += OnMoveCanceled; // 구독 해제
-        attack.Player.Attack.performed += OnAttackPerformed;
-        attack.Player.Attack.canceled += OnAttackCanceled;
         turnManager = FindObjectOfType<TurnManager>();
-    }
-
-
-
-    private void OnAttackPerformed(InputAction.CallbackContext obj)
-    {
-        Debug.Log("공격시작");
-        Attack(lookDirection);
-    }
-
-    private void OnAttackCanceled(InputAction.CallbackContext obj)
-    { }
-
-    protected void OnEnable()
-    {
-        directionToLook.Enable();
-        attack.Enable();
-    }
-    protected void OnDisable()
-    {
-        directionToLook.Disable();
-        attack.Disable();
-    }
-
-    private void OnMovePerformed(InputAction.CallbackContext context)
-    {
-        Vector2 moveInput = context.ReadValue<Vector2>();
-
-        if (Mathf.Abs(moveInput.x) > Mathf.Abs(moveInput.y))
-        {
-            moveInput = new Vector2(moveInput.x, 0);
-        }
-        else
-        {
-            moveInput = new Vector2(0, moveInput.y);
-        }
-        UpdateDirection(moveInput.normalized);
-    }
-
-    private void OnMoveCanceled(InputAction.CallbackContext context) { }
-
-    protected void UpdateDirection(Vector2 newDirection)
-    {
-        ClearRangeBoxes();
-        lookDirection = newDirection;
-        ShowAttackRange(lookDirection);
     }
 
     public virtual void Attack(Vector2 direction)
@@ -79,6 +25,12 @@ public abstract class WeaponAttack : MonoBehaviour
         CheckAttackRange(direction);
         ClearRangeBoxes();
         turnManager.NextTurn();
+    }
+    protected void UpdateDirection(Vector2 newDirection)
+    {
+        ClearRangeBoxes();
+        lookDirection = newDirection;
+        ShowAttackRange(newDirection);
     }
 
     protected virtual void CheckAttackRange(Vector2 direction)
@@ -139,5 +91,10 @@ public abstract class WeaponAttack : MonoBehaviour
     protected void DrawAttackRay(Vector2 direction)
     {
         Gizmos.DrawLine(transform.position, (Vector2)transform.position + direction * range);
+    }
+
+    public void SetLookDirection(Vector2 direction)
+    {
+        lookDirection = direction;
     }
 }
