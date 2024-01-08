@@ -25,6 +25,7 @@ public class Door : MonoBehaviour
         StopAllCoroutines();
         StartCoroutine(MoveDoor(openPosition));
         isOpen = true;
+        //Debug.Log("¿­·È´Ù");
     }
 
     public void CloseDoor()
@@ -32,6 +33,7 @@ public class Door : MonoBehaviour
         StopAllCoroutines();
         StartCoroutine(MoveDoor(closedPosition));
         isOpen = false;
+       // Debug.Log("´ÝÇû´Ù");
     }
 
     private IEnumerator MoveDoor(Vector3 targetPosition)
