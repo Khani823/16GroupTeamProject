@@ -7,7 +7,12 @@ public class EnemyScript : Character
     private EnemyManager enemyManager;
     private GameObject player;
     private WeaponAttack weaponAttack;
-    private float chaseRange = 5.0f; // 추격 범위
+    private Vector2 lookDirection;
+    private float chaseRange = 5.0f;
+    private float attackRange;
+    public float distanceToPlayer;
+    [SerializeField]
+    private bool isUnderAction = false;
 
     protected override void Start()
     {
@@ -15,34 +20,28 @@ public class EnemyScript : Character
         enemyManager = FindObjectOfType<EnemyManager>();
         player = GameObject.FindGameObjectWithTag("Player");
         weaponAttack = GetComponent<WeaponAttack>();
+        attackRange = weaponAttack.range;
     }
 
-    private void Update()
+    public void SetTurn(bool value)
     {
-        if (player != null)
-        {
-            float distanceToPlayer = Vector2.Distance(transform.position, player.transform.position);
+        isUnderAction = value;
 
-            if (distanceToPlayer <= chaseRange)
-            {
-                ChasePlayer();
-            }
-            else if (IsPlayerInRange())
-            {
-                AttackPlayer();
-            }
-            else
-            {
-                turnManager.NextTurn();
-            }
+        if (value)
+        {
+            weaponAttack.enabled = true;
+        }
+        else
+        {
+            weaponAttack.enabled = false;
         }
     }
-
-    private bool IsPlayerInRange()
+    private void Update()
     {
-        Vector2 directionToPlayer = player.transform.position - transform.position;
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, directionToPlayer.normalized, weaponAttack.range, weaponAttack.targetlayer);
-        return hit.collider != null && hit.collider.gameObject == player;
+        if (isUnderAction && player != null)
+        {
+            PerformAction();
+        }
     }
 
     private void ChasePlayer()
@@ -50,21 +49,44 @@ public class EnemyScript : Character
         // 플레이어 추격 로직 구현
     }
 
+    protected override void PerformAction()
+    {
+        distanceToPlayer = Vector2.Distance(player.transform.position, transform.position);
+
+        if (weaponAttack.IsTargetInRange(lookDirection))
+        {
+            AttackPlayer();
+        }
+        else if (distanceToPlayer <= chaseRange)
+        {
+            ChasePlayer();
+        }
+        else
+        {
+            RandomMove();
+        }
+    }
+
     private void AttackPlayer()
     {
         Vector2 directionToPlayer = player.transform.position - transform.position;
-        weaponAttack.SetLookDirection(directionToPlayer.normalized);
         weaponAttack.Attack(directionToPlayer.normalized);
         Debug.Log("플레이어가 공격을 받았다!");
+        turnManager.NextTurn();
     }
 
-    protected override void PerformAction()
+    private void RandomMove()
     {
-        throw new System.NotImplementedException();
+        // 랜덤 이동 로직 구현
+        turnManager.NextTurn();
+
     }
 
     protected override void Die()
     {
         enemyManager.RemoveEnemy(this.gameObject);
     }
+
+
+
 }

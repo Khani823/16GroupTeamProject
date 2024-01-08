@@ -56,6 +56,12 @@ public abstract class WeaponAttack : MonoBehaviour
 		}
     }
 
+    public bool IsTargetInRange(Vector2 direction)
+    {
+        Vector2 position = transform.position;
+        RaycastHit2D hit = Physics2D.Raycast(position, direction, range, targetlayer);
+        return hit.collider != null && hit.collider.gameObject.CompareTag("Player");
+    }
     protected int DamageCalculation(CharacterStatsSO attackerStat, CharacterStatsSO defenderStat)
     {
         int baseDamage = Mathf.Max(1, attackerStat.atk - defenderStat.def);

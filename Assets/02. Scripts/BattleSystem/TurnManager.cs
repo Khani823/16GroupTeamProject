@@ -58,10 +58,14 @@ public class TurnManager : MonoBehaviour
         var weaponAttack = activeObject.GetComponentInChildren<WeaponAttack>();
         if (weaponAttack != null)
         {
-            Debug.Log("Activating WeaponAttack on: " + activeObject.name);
             weaponAttack.enabled = true;
         }
         activeObject.GetComponent<Character>().EnableTurnAction();
+
+        if (activeObject.tag == "Enemy")
+        {
+            activeObject.GetComponent<EnemyScript>().SetTurn(true);
+        }
     }
 
     private void DeactivateObject(GameObject inactiveObject)
@@ -69,12 +73,17 @@ public class TurnManager : MonoBehaviour
         var weaponAttack = inactiveObject.GetComponentInChildren<WeaponAttack>();
         if (weaponAttack != null)
         {
-            Debug.Log("Deactivating WeaponAttack on: " + inactiveObject.name);
             weaponAttack.enabled = false;
         }
 
         inactiveObject.GetComponent<Character>().DisableTurnAction();
+
+        if (inactiveObject.tag == "Enemy")
+        {
+            inactiveObject.GetComponent<EnemyScript>().SetTurn(false);
+        }
     }
+
     public bool IsCurrentlyInAction(GameObject activeObject)
     {
         return activeObject == currentlyInAction;
