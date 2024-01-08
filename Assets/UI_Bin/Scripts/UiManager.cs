@@ -1,64 +1,89 @@
 using System.Collections;
-using System.Collections.Generic;
-using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.UI;
+using static UnityEditor.PlayerSettings;
 
 public class UiManager : MonoBehaviour
 {
     public Text levelText;
+    public Text EXPText;
     public Text HPText;
     public Text MPText;
-    public Text EXPText;
     public Text ATTText;
     public Text DEFText;
+    public Text GoldText;
 
-    public GameObject xpBar;
-    public GameObject hpBar;
-    public GameObject mpBar;
 
-    int level = 1;
-    int HP = 100;
-    int MP = 100;    
-    int exp = 0;
-    int maxexp = 100;
-    int Att = 10;
-    int Def = 10;
-    
-    float maxHp = 100f;
-    float curHp;
-    float maxMP = 100f;
-    float curMP;
+    [SerializeField]
+    private Slider hpBar;
+    [SerializeField]
+    private Slider mpBar;
+    [SerializeField]
+    private Slider expBar;
 
-    float imsi;
+    private float level = 1;
+    private float exp = 0;
+    private float HP = 100;
+    private float MP = 100;
+    private float Att = 10;
+    private float Def = 10;
+    private float MaxHP = 100;
+    private float MaxMP = 100;
+    private float Maxexp = 100;
+    private float Gold = 50;
+
 
     void Start()
     {
-        curHp = maxHp;
-        curMP = maxMP;
-        UpdateText();
+        UpdateUI();
+    }
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            TakeDamage(10);
+            UseSkill(10);
+            GainExperience(10);
+        }
+    }
+
+    private void UpdateUI()
+    {
+        hpBar.value = HP / MaxHP;
+        mpBar.value = MP / MaxMP;
+        expBar.value = exp / Maxexp;
+
+        HPText.text = HP.ToString() + " / " + MaxHP.ToString();
+        MPText.text = MP.ToString() + " / " + MaxMP.ToString();
+        EXPText.text = exp.ToString() + " / " + Maxexp.ToString();
+        ATTText.text = Att.ToString();
+        DEFText.text = Def.ToString();
+        GoldText.text = Gold.ToString();
+        levelText.text = "Lv: " + level.ToString();
     }
 
     // 플레이어가 공격당할 때 호출되는 메서드
-    public void TakeDamage(float damageAmount)
+    public void TakeDamage(int damageAmount)
     {
-        curHp -= damageAmount;
+        HP -= damageAmount;
+        HP = Mathf.Max(HP, 0);
         UpdateHpBar();
-        
-        if (curHp <= 0)
+
+        if (HP <= 0)
         {
             Debug.Log("죽음");
         }
     }
 
     // 스킬을 사용할 때 호출되는 메서드
-    public void UseSkill(float mpCost)
+    public void UseSkill(int mpCost)
     {
-        if (curMP >= mpCost)
+        if (MP >= mpCost)
         {
-            curMP -= mpCost;
+            MP -= mpCost;
             UpdateMpBar();
-            
+
             Debug.Log("스킬 사용!");
         }
         else
@@ -71,9 +96,10 @@ public class UiManager : MonoBehaviour
     public void GainExperience(int xp)
     {
         exp += xp;
+        Gold += 10;
 
         // 레벨 업이 가능하면 업!!        
-        if (exp >= maxexp)
+        if (exp >= Maxexp)
         {
             LevelUp();
         }
@@ -86,53 +112,47 @@ public class UiManager : MonoBehaviour
         level++;
         exp = 0;
 
-        // 레벨업 후 경험치량 증가
-        maxexp += 10;
-        HP += 10;
-        MP += 10;
+        // 레벨업 후 스탯 증가
+        Maxexp += 100;
+        MaxHP += 10;
+        MaxMP += 10;
+        Att += 10;
+        Def += 10;
 
-        UpdateExpBar();
-        UpdateText();
-    }
-
-    void UpdateText()
-    {
-        levelText.text = "Lv: " + level.ToString();
-        HPText.text = HP.ToString();
-        MPText.text = MP.ToString();
-        EXPText.text = exp.ToString();
-        ATTText.text = CalculateAtt().ToString();
-        DEFText.text = CalculateDef().ToString();
+        UpdateUI();
     }
 
     void UpdateMpBar()
     {
         // MpBar 업데이트
-        float mpPercentage = curMP / maxMP;
-        mpBar.GetComponent<Image>().fillAmount = mpPercentage;
+        float mpPercentage = MP / MaxMP;
+        mpBar.value = Mathf.Lerp(mpBar.value, MP / MaxMP, Time.deltaTime * 10);
+        UpdateUI();
     }
 
 
     void UpdateHpBar()
     {
         // HP바 업데이트
-        float hpPercentage = curHp / maxHp;
-        hpBar.GetComponent<Image>().fillAmount = hpPercentage;
+        float hpPercentage = HP / MaxHP;
+        hpBar.value = Mathf.Lerp(hpBar.value, HP / MaxHP, Time.deltaTime * 10);
+        UpdateUI();
     }
     void UpdateExpBar()
     {
         // 경험치 바 UI 업데이트
-        float fillAmount = (float)exp / maxexp;
-        xpBar.GetComponent<Image>().fillAmount = fillAmount;
+        float fillAmount = exp / Maxexp;
+        expBar.value = Mathf.Lerp(expBar.value, exp / Maxexp, Time.deltaTime * 10);
+        UpdateUI();
     }
 
     int CalculateAtt()
     {
-        return level * 2;
+        return (int)level * 2;
     }
 
     int CalculateDef()
     {
-        return level * 2;
+        return (int)level * 2;
     }
 }
