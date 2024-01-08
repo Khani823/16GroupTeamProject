@@ -4,10 +4,7 @@ using UnityEngine;
 
 public enum Type 
 {
-    sword,
-    hammer,
-    gun,
-    bow,
+    Weapon,
     helmet,
     armor,
     potion,
