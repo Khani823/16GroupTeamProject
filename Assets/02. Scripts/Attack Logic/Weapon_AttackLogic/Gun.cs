@@ -10,8 +10,7 @@ public class Gun : WeaponAttack
     public override void Attack(Vector2 direction)
     {
         hitCount = 0;
-        CheckAttackRange(direction);
-        ClearRangeBoxes();
+        base.Attack(direction);
     }
 
     public override void ShowAttackRange(Vector2 direction)

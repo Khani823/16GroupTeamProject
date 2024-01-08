@@ -34,7 +34,8 @@ public abstract class Character : MonoBehaviour, IDamageable
 
     protected virtual void Die()
     {
-        throw new NotImplementedException();
+        turnManager.RemoveFromTurn(gameObject);
+        gameObject.SetActive(false);
     }
 
     public virtual void EnableTurnAction()

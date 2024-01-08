@@ -78,6 +78,7 @@ public abstract class WeaponAttack : MonoBehaviour
     {
         CheckAttackRange(direction);
         ClearRangeBoxes();
+        turnManager.NextTurn();
     }
 
     protected virtual void CheckAttackRange(Vector2 direction)
@@ -98,8 +99,6 @@ public abstract class WeaponAttack : MonoBehaviour
                     int damage = CalculateFinalDamage(attackerStat.stats, defenderStat.stats, direction, targetPosition);
                     damageableObject.TakeDamage(damage);
                     Debug.Log($"맞은 대상: {hit.collider.gameObject.name}, 받은 대미지: {damage}");
-                    turnManager.NextTurn();
-
                 }
             }
 		}

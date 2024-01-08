@@ -8,7 +8,7 @@ public class Sword : WeaponAttack
 {
     public override void Attack(Vector2 direction)
     {
-        CheckAttackRange(direction);
+        base.Attack(direction);
         CheckAttackRange(Quaternion.Euler(0, 0, 90) * direction);
         CheckAttackRange(Quaternion.Euler(0, 0, -90) * direction);
     }

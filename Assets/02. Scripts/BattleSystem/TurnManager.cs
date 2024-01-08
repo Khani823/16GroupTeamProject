@@ -22,24 +22,28 @@ public class TurnManager : MonoBehaviour
         AddToTurn(playerObject);
         currentlyInAction = playerObject;
         isOnAction = playerObject;
+        ActivateObject(currentlyInAction);
     }
 
     public void NextTurn()
     {
-        if(turnQueue.Count > 0 )
+        Debug.Log("NextTurn called. Queue Count: " + turnQueue.Count);
+
+        if (turnQueue.Count > 0)
         {
-            if(currentlyInAction != null)
+            if (currentlyInAction != null)
             {
-                currentlyInAction.GetComponent<Character>().DisableTurnAction();
+                Debug.Log("Deactivating current object: " + currentlyInAction.name);
+                DeactivateObject(currentlyInAction);
             }
 
             currentlyInAction = turnQueue.Dequeue();
-            Debug.Log("현재턴 : " + currentlyInAction.name);
+            Debug.Log("Currently in action: " + currentlyInAction.name);
 
-            currentlyInAction.GetComponent<Character>().EnableTurnAction();
-            isOnAction = currentlyInAction;
+            ActivateObject(currentlyInAction);
 
             turnQueue.Enqueue(currentlyInAction);
+            isOnAction = currentlyInAction;
 
             turnCount++;
             if (turnCount % turnToSpawn == 0)
@@ -51,9 +55,26 @@ public class TurnManager : MonoBehaviour
 
     private void ActivateObject(GameObject activeObject)
     {
+        var weaponAttack = activeObject.GetComponentInChildren<WeaponAttack>();
+        if (weaponAttack != null)
+        {
+            Debug.Log("Activating WeaponAttack on: " + activeObject.name);
+            weaponAttack.enabled = true;
+        }
         activeObject.GetComponent<Character>().EnableTurnAction();
     }
 
+    private void DeactivateObject(GameObject inactiveObject)
+    {
+        var weaponAttack = inactiveObject.GetComponentInChildren<WeaponAttack>();
+        if (weaponAttack != null)
+        {
+            Debug.Log("Deactivating WeaponAttack on: " + inactiveObject.name);
+            weaponAttack.enabled = false;
+        }
+
+        inactiveObject.GetComponent<Character>().DisableTurnAction();
+    }
     public bool IsCurrentlyInAction(GameObject activeObject)
     {
         return activeObject == currentlyInAction;
@@ -66,6 +87,15 @@ public class TurnManager : MonoBehaviour
 
     public void RemoveFromTurn(GameObject gameObject)
     {
-
+        var newQueue = new Queue<GameObject>();
+        while (turnQueue.Count > 0)
+        {
+            var obj = turnQueue.Dequeue();
+            if (obj != gameObject)
+            {
+                newQueue.Enqueue(obj);
+            }
+        }
+        turnQueue = newQueue;
     }
 }

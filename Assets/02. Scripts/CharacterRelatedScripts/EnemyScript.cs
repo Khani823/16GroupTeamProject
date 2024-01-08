@@ -6,8 +6,9 @@ public class EnemyScript : Character
 {
     private EnemyManager enemyManager;
 
-    private void Start()
+    protected override void Start()
     {
+        base.Start();
         enemyManager = FindObjectOfType<EnemyManager>();
     }
     protected override void Die()

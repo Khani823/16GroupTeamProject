@@ -9,8 +9,7 @@ public class Bow : WeaponAttack
 
     public override void Attack(Vector2 direction)
     {
-        CheckAttackRange(direction);
-        ClearRangeBoxes();
+        base.Attack(direction);
     }
 
     public override void ShowAttackRange(Vector2 direction)
@@ -56,7 +55,6 @@ public class Bow : WeaponAttack
                 int damage = CalculateFinalDamage(attackerStat.stats, defenderStat.stats, direction, targetPosition);
                 damageableObject.TakeDamage(damage);
                 Debug.Log($"���� ���: {hit.collider.gameObject.name}, ���� �����: {damage}");
-                turnManager.NextTurn();
             }
         }
         

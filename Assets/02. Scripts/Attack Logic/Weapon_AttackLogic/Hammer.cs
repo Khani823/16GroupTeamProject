@@ -7,8 +7,7 @@ public class Hammer : WeaponAttack
 {
     public override void Attack(Vector2 direction)
     {
-        CheckAttackRange(direction);
-        ClearRangeBoxes();
+        base.Attack(direction);
     }
 
     public override void ShowAttackRange(Vector2 direction)
