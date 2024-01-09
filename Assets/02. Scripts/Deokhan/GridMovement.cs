@@ -24,7 +24,6 @@ public class GridMovement : MonoBehaviour
         weaponAttack = GetComponentInChildren<WeaponAttack>();
     }
 
-
     // Update is called once per frame
     void Update()
     {
@@ -69,9 +68,6 @@ public class GridMovement : MonoBehaviour
         if (weaponAttack != null)
             weaponAttack.UpdateDirection(direction);
 
-
-
         isMoving = false;
-        Debug.Log("Ending MovePlayer Coroutine");
     }
 }

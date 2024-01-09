@@ -9,7 +9,7 @@ public class EnemyManager : MonoBehaviour
     public Transform[] spawnPoints;
     public float spawnRadius = 1.0f;
     public LayerMask enemyLayer;
-    public int initialEnemy = 7;
+    public int initialEnemy;
 
     private TurnManager turnManager;
 

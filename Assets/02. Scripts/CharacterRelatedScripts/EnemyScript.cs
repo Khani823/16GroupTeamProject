@@ -86,7 +86,4 @@ public class EnemyScript : Character
     {
         enemyManager.RemoveEnemy(this.gameObject);
     }
-
-
-
 }

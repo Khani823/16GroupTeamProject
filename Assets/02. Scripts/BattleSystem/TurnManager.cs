@@ -27,19 +27,13 @@ public class TurnManager : MonoBehaviour
 
     public void NextTurn()
     {
-        Debug.Log("NextTurn called. Queue Count: " + turnQueue.Count);
-
         if (turnQueue.Count > 0)
         {
             if (currentlyInAction != null)
             {
-                Debug.Log("Deactivating current object: " + currentlyInAction.name);
                 DeactivateObject(currentlyInAction);
             }
-
             currentlyInAction = turnQueue.Dequeue();
-            Debug.Log("Currently in action: " + currentlyInAction.name);
-
             ActivateObject(currentlyInAction);
 
             turnQueue.Enqueue(currentlyInAction);

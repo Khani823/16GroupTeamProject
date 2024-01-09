@@ -25,6 +25,8 @@ public class WeaponEquipmentandPrefabManager : MonoBehaviour
     {
         if (currentWeaponman != null)
         {
+            var currentWeaponAttack = currentWeaponman.GetComponentInChildren<WeaponAttack>();
+            currentWeaponAttack.ClearRangeBoxes();
 	        Debug.Log("Destroying current weapon: " + currentWeaponman.name);
             Destroy(currentWeaponman);
         }
