@@ -8,6 +8,6 @@ public class SceneLoad : MonoBehaviour
 {
     public void OnStartButtonClick()
     {
-        SceneManager.LoadScene("binheeScene");
+        SceneManager.LoadScene("Chulju_Scene");
     }
 }
