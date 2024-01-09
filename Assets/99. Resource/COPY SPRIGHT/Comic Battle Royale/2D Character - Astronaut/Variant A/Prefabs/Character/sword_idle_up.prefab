@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 8897777747522309521}
   - component: {fileID: 8897777747522309520}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: sword_idle_up
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -96,7 +96,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8897777747784647011}
   - component: {fileID: 8897777747784647012}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: shadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -180,7 +180,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8897777749151455927}
   - component: {fileID: 8897777749151455928}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: weapon_sword_idle_up
   m_TagString: Untagged
   m_Icon: {fileID: 0}

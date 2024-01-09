@@ -4,63 +4,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class Sword : MonoBehaviour
+public class Sword : WeaponAttack
 {
-    public float range = 1f;
-    public LayerMask targetlayer;
-    public Vector2 lookDirection;
-    public GameObject rangeBox;
-    private List<GameObject> rangeBoxes = new List<GameObject>();
-
-    private void Start()
+    public override void Attack(Vector2 direction)
     {
-        TestController.OnDirectionChange += UpdateDirection;
-    }
-
-    private void OnDestroy()
-    {
-        TestController.OnDirectionChange -= UpdateDirection;
-    }
-
-    private void UpdateDirection(Vector2 newDirection)
-    {
-        ClearRangeBoxes();
-        lookDirection = newDirection;
-        ShowAttackRange(lookDirection);
-    }
-
-    private void ClearRangeBoxes()
-    {
-        foreach (var rangeBox in rangeBoxes)
-        {
-            Destroy(rangeBox);
-        }
-        rangeBoxes.Clear();
-    }
-
-    public void Attack(Vector2 direction)
-    {
-        CheckAttackRange(direction);
+        base.Attack(direction);
         CheckAttackRange(Quaternion.Euler(0, 0, 90) * direction);
         CheckAttackRange(Quaternion.Euler(0, 0, -90) * direction);
     }
 
-  
-    private void CheckAttackRange(Vector2 direction)
-    {
-        Vector2 position = transform.position;
-        RaycastHit2D hit = Physics2D.Raycast(position, direction, range, targetlayer);
-        if (hit.collider != null)
-        {
-            Debug.Log("맞았습니다! 대상: " + hit.collider.gameObject.name);
-        }
-    }
-
-    private void ShowAttackRange(Vector2 direction)
+    public override void ShowAttackRange(Vector2 direction)
     {
         Vector2 frontPosition = (Vector2)transform.position + direction;
         CreateRangeBoxAtPosition(frontPosition);
-       
+
         Vector2 leftPosition = (Vector2)transform.position + (Vector2)(Quaternion.Euler(0, 0, 90) * direction);
         CreateRangeBoxAtPosition(leftPosition);
 
@@ -75,16 +32,18 @@ public class Sword : MonoBehaviour
         rangeBoxes.Add(showingBox);
     }
 
-    void OnDrawGizmos()
+    protected override void OnDrawGizmos()
     {
-        Gizmos.color = Color.red;
-        DrawAttackRay(lookDirection);
+        base.OnDrawGizmos();
         DrawAttackRay(Quaternion.Euler(0, 0, 90) * lookDirection);
         DrawAttackRay(Quaternion.Euler(0, 0, -90) * lookDirection);
     }
 
-    private void DrawAttackRay(Vector2 direction)
+    protected override int CalculateFinalDamage(CharacterStatsSO attackerStats, CharacterStatsSO defenderStats, Vector2 attackDirection, Vector2 targetPosition)
     {
-        Gizmos.DrawLine(transform.position, (Vector2)transform.position + direction * range);
+        int baseDamage = DamageCalculation(attackerStats, defenderStats);
+        bool isFront = IsFront(targetPosition);
+        float damageModifier = isFront ? UnityEngine.Random.Range(0.9f, 1.0f) : UnityEngine.Random.Range(0.7f, 0.8f);
+        return Mathf.RoundToInt(baseDamage * damageModifier);
     }
 }

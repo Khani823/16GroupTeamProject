@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5795131566182825507}
   - component: {fileID: 5795131566182825506}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: shadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,9 +94,9 @@ GameObject:
   m_Component:
   - component: {fileID: 5795131566280419148}
   - component: {fileID: 5795131566280419149}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: hammer_idle_up
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -158,7 +158,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 5
   m_Sprite: {fileID: 21300000, guid: a630eae0d17b4c31bca096a9a83eff1e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -180,7 +180,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5795131567394466401}
   - component: {fileID: 5795131567394466400}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: weapon_hammer_idle_up
   m_TagString: Untagged
   m_Icon: {fileID: 0}

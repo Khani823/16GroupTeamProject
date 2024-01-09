@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4257746298466632483}
   - component: {fileID: 4257746298466632540}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: shadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4257746298524520504}
   - component: {fileID: 4257746298524520505}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: gun_side-overlay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -178,7 +178,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4257746298588380663}
   - component: {fileID: 4257746298588380656}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: weapon_gun_side
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -262,9 +262,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4257746298942446284}
   - component: {fileID: 4257746298942446291}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: gun_side
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -328,7 +328,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 5
   m_Sprite: {fileID: 21300000, guid: 9d2ce67ec203477a9729523a164ec653, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -351,7 +351,7 @@ GameObject:
   - component: {fileID: 4257746299463106719}
   - component: {fileID: 4257746299463106713}
   - component: {fileID: 4257746299463106712}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: muzzle_flash_gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -445,3 +445,4 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

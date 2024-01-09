@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public class Stats
+public class Stats : MonoBehaviour
 {
 
 

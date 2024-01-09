@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2688344385766216989}
   - component: {fileID: 2688344385766216991}
   - component: {fileID: 2688344385766216990}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: hammer_attack_side-overlay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -105,6 +105,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &2688344385787582933
 GameObject:
   m_ObjectHideFlags: 0
@@ -116,9 +117,9 @@ GameObject:
   - component: {fileID: 2688344385787583016}
   - component: {fileID: 2688344385787582935}
   - component: {fileID: 2688344385787582934}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: hammer_attack_side
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -213,6 +214,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &2688344386178927687
 GameObject:
   m_ObjectHideFlags: 0
@@ -224,7 +226,7 @@ GameObject:
   - component: {fileID: 2688344386178927704}
   - component: {fileID: 2688344386178927706}
   - component: {fileID: 2688344386178927705}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: weapon_hammer_side
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -318,6 +320,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &2688344386743913359
 GameObject:
   m_ObjectHideFlags: 0
@@ -328,7 +331,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2688344386743913344}
   - component: {fileID: 2688344386743913345}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: shadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}

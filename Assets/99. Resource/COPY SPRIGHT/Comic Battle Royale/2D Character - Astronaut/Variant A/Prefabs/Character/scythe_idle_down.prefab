@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5841337175484611812}
   - component: {fileID: 5841337175484611815}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: scythe_idle_down-overlay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5841337175772973674}
   - component: {fileID: 5841337175772973677}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: shadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -178,7 +178,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5841337175805100556}
   - component: {fileID: 5841337175805100559}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: weapon_scythe_idle_down
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -262,9 +262,9 @@ GameObject:
   m_Component:
   - component: {fileID: 5841337175967203770}
   - component: {fileID: 5841337175967203771}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: scythe_idle_down
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

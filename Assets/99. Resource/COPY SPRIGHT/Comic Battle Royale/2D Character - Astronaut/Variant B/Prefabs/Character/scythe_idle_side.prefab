@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3103626946173913333}
   - component: {fileID: 3103626946173913332}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: weapon_scythe_side
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,9 +94,9 @@ GameObject:
   m_Component:
   - component: {fileID: 3103626946695592954}
   - component: {fileID: 3103626946695592955}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: scythe_idle_side
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -159,7 +159,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 5
   m_Sprite: {fileID: 21300000, guid: d24f27feb30b4ec1bab9e072a5972cdf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -181,7 +181,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3103626946783595988}
   - component: {fileID: 3103626946783595987}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: shadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -265,7 +265,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3103626947041523026}
   - component: {fileID: 3103626947041523025}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: scythe_idle_side-overlay
   m_TagString: Untagged
   m_Icon: {fileID: 0}

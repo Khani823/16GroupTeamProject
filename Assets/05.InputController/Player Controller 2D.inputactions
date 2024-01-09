@@ -33,9 +33,18 @@
                     "initialStateCheck": true
                 },
                 {
+                    "name": "Attack",
+                    "type": "Button",
+                    "id": "a45fde72-2b72-49dd-8caf-b17bf36e12cd",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
                     "name": "Inventory",
                     "type": "Button",
-                    "id": "45b7c9e4-4cd6-4c16-93f3-bf708ede55eb",
+                    "id": "e94b3080-0189-4658-9f7c-b8c44b1df384",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -122,7 +131,18 @@
                 },
                 {
                     "name": "",
-                    "id": "debbfea8-5b59-4576-abd7-ae38ba78e77d",
+                    "id": "d71e63c4-48c4-402c-bfe5-a35b41f8de27",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Attack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0a708623-f998-4ff8-b458-120c4ee3849b",
                     "path": "<Keyboard>/tab",
                     "interactions": "",
                     "processors": "",

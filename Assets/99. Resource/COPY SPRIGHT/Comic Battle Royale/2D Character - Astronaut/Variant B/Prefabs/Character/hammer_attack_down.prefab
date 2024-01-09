@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 904972776905249382}
   - component: {fileID: 904972776905249400}
   - component: {fileID: 904972776905249401}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: hammer_attack_down-overlay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -105,6 +105,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &904972777031423183
 GameObject:
   m_ObjectHideFlags: 0
@@ -115,7 +116,7 @@ GameObject:
   m_Component:
   - component: {fileID: 904972777031423182}
   - component: {fileID: 904972777031423169}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: shadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -200,7 +201,7 @@ GameObject:
   - component: {fileID: 904972777177024059}
   - component: {fileID: 904972777177024061}
   - component: {fileID: 904972777177024058}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: weapon_hammer_down
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -294,6 +295,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &904972778201425109
 GameObject:
   m_ObjectHideFlags: 0
@@ -305,9 +307,9 @@ GameObject:
   - component: {fileID: 904972778201425110}
   - component: {fileID: 904972778201425111}
   - component: {fileID: 904972778201425108}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: hammer_attack_down
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -370,7 +372,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 5
   m_Sprite: {fileID: 21300000, guid: 2e91726c2491461897c05c770978ea9d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -402,3 +404,4 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

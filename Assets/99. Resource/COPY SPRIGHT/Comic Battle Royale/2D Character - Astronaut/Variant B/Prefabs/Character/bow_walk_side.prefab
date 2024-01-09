@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 347709437595330877}
   - component: {fileID: 347709437595330879}
   - component: {fileID: 347709437595330878}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: weapon_bow_side
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -105,6 +105,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &347709437670123145
 GameObject:
   m_ObjectHideFlags: 0
@@ -116,9 +117,9 @@ GameObject:
   - component: {fileID: 347709437670123148}
   - component: {fileID: 347709437670123147}
   - component: {fileID: 347709437670123146}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: bow_walk_side
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -181,7 +182,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 5
   m_Sprite: {fileID: 21300000, guid: 8aaff22dfd414791925349cd507cbaa1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -213,6 +214,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &347709437781486841
 GameObject:
   m_ObjectHideFlags: 0
@@ -223,7 +225,7 @@ GameObject:
   m_Component:
   - component: {fileID: 347709437781486842}
   - component: {fileID: 347709437781486843}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: shadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -308,7 +310,7 @@ GameObject:
   - component: {fileID: 347709438294299892}
   - component: {fileID: 347709438294299894}
   - component: {fileID: 347709438294299893}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: bow_walk_side-overlay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -402,3 +404,4 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

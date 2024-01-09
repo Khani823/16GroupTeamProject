@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5878814509205523419}
   - component: {fileID: 5878814509205523413}
   - component: {fileID: 5878814509205523412}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: bomb_walk_side-overlay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -105,6 +105,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &5878814509312524737
 GameObject:
   m_ObjectHideFlags: 0
@@ -115,7 +116,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5878814509312524738}
   - component: {fileID: 5878814509312524739}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: shadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -200,7 +201,7 @@ GameObject:
   - component: {fileID: 5878814509778905552}
   - component: {fileID: 5878814509778905554}
   - component: {fileID: 5878814509778905553}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: bomb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -294,6 +295,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &5878814510507608232
 GameObject:
   m_ObjectHideFlags: 0
@@ -305,9 +307,9 @@ GameObject:
   - component: {fileID: 5878814510507608235}
   - component: {fileID: 5878814510507608234}
   - component: {fileID: 5878814510507608233}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: bomb_walk_side
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -370,7 +372,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 5
   m_Sprite: {fileID: 21300000, guid: 400763a951ae4e49946bea2a751c517a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -402,3 +404,4 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
