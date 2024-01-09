@@ -41,7 +41,6 @@ public class GridMovement : MonoBehaviour
     private void TryMove(Vector2 direction)
     {
         RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, collisionCheckDistance, layerMask);
-        Debug.Log($"Trying to move in direction: {direction}, Hit: {hit.collider}");
         if (hit.collider == null)
         {
             StartCoroutine(MovePlayer(direction));
@@ -50,7 +49,6 @@ public class GridMovement : MonoBehaviour
     
     private IEnumerator MovePlayer(Vector3 direction)
     {
-        Debug.Log("Starting MovePlayer Coroutine");
         isMoving = true;
 
         float elapsedTime = 0;
