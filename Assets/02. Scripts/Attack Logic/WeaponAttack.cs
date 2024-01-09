@@ -26,7 +26,7 @@ public abstract class WeaponAttack : MonoBehaviour
         ClearRangeBoxes();
         turnManager.NextTurn();
     }
-    protected void UpdateDirection(Vector2 newDirection)
+    public  void UpdateDirection(Vector2 newDirection)
     {
         ClearRangeBoxes();
         lookDirection = newDirection;

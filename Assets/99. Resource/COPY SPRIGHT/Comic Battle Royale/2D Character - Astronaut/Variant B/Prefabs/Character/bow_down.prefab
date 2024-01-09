@@ -224,7 +224,6 @@ GameObject:
   - component: {fileID: 5107202914049814877}
   - component: {fileID: -9193024203161331179}
   - component: {fileID: -3428558821153244538}
-  - component: {fileID: -2401351720778351908}
   - component: {fileID: 2777845848814625580}
   m_Layer: 8
   m_Name: bow_down
@@ -316,6 +315,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stats: {fileID: 11400000, guid: 915fae3885f43b542aac244db98ee353, type: 2}
+  distanceToPlayer: 0
+  isUnderAction: 0
 --- !u!61 &-3428558821153244538
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -361,33 +362,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.95, y: 0.95}
   m_EdgeRadius: 0
---- !u!50 &-2401351720778351908
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5107202914049814876}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!114 &2777845848814625580
 MonoBehaviour:
   m_ObjectHideFlags: 0

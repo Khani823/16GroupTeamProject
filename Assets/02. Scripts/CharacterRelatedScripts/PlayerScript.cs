@@ -9,6 +9,7 @@ public class PlayerScript : Character
     private PlayerController2D playerController;
     private Vector2 currentDirection;
     private WeaponAttack weaponAttack;
+    private GridMovement movement;
 
     protected override void Awake()
     {
@@ -20,6 +21,8 @@ public class PlayerScript : Character
         playerController.Player.Move.canceled += OnMoveCanceled;
         playerController.Player.Attack.performed += OnAttackPerformed;
         playerController.Player.Attack.canceled += OnAttackCanceled;
+
+        movement = GetComponent<GridMovement>();
     }
     private void OnEnable()
     {
@@ -59,6 +62,7 @@ public class PlayerScript : Character
         {
             weaponAttack.SetLookDirection(currentDirection.normalized);
             weaponAttack.ShowAttackRange(currentDirection.normalized);
+            weaponAttack.UpdateDirection(currentDirection.normalized);
         }
     }
 
@@ -80,11 +84,13 @@ public class PlayerScript : Character
     {
         base.EnableTurnAction();
         playerController.Enable();
+        movement.enabled = true;
     }
 
     public override void DisableTurnAction()
     {
         base.DisableTurnAction();
         playerController.Disable();
+        movement.enabled = false;
     }
 }
