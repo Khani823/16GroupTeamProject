@@ -13,8 +13,7 @@ public class PlayerInputController : CharacterController
     private Vector2 moveInput;
     private void Awake()
     {
-     
-        DontDestroyOnLoad(gameObject);
+
         _camera = Camera.main;
        // _animator = GetComponent<Animator>();
     }
