@@ -17,15 +17,15 @@ public class WeaponEquipmentandPrefabManager : MonoBehaviour
     private void Awake()
     {
         move = GetComponentInParent<GridMovement>();
+        weaponAttack = GetComponentInChildren<WeaponAttack>();
+	    EquipSword();
     }
 
     public void ChangeCharacterPrefab(GameObject newCharacterPrefab)
     {
         if (currentWeaponman != null)
         {
-            //weaponAttack = GetComponentInChildren<WeaponAttack>();
-            //weaponAttack.ClearRangeBoxes();
-            Debug.Log("Destroying current weapon: " + currentWeaponman.name);
+	        Debug.Log("Destroying current weapon: " + currentWeaponman.name);
             Destroy(currentWeaponman);
         }
 
