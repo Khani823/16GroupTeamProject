@@ -11,11 +11,6 @@ public class CharacterController : MonoBehaviour
 
     PlayerStat _stat;
 
-    private void Awake()
-    {
-        DontDestroyOnLoad(gameObject);
-    }
-
     void Start()
     {
         //기본 스탯 정보 가져오기

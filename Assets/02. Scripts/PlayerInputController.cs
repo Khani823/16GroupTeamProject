@@ -14,7 +14,6 @@ public class PlayerInputController : CharacterController
     private void Awake()
     {
      
-        DontDestroyOnLoad(gameObject);
         _camera = Camera.main;
        // _animator = GetComponent<Animator>();
     }

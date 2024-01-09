@@ -13,9 +13,13 @@ public class DoorSwitch : MonoBehaviour
         if (Input.GetMouseButtonDown(0) && IsPlayerInInteractionRange())
         {
             Debug.Log("마우스 클릭");
-            Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            RaycastHit2D hit = Physics2D.Raycast(mousePosition, Vector2.zero, Mathf.Infinity, LayerMask.GetMask("Default"));
-            if (hit.collider != null && hit.collider.gameObject == gameObject) // 스위치를 클릭했는지 확인
+            Vector3 mouseScreenPosition = new Vector3(Input.mousePosition.x, Input.mousePosition.y, -Camera.main.transform.position.z);
+            Vector2 mousePosition = Camera.main.ScreenToWorldPoint(mouseScreenPosition);
+
+            RaycastHit2D hit = Physics2D.Raycast(mousePosition, Vector2.up, Mathf.Infinity);
+            Debug.DrawRay(mousePosition, Vector2.up * 10f, Color.red, 2f);
+
+            if (hit.collider != null && hit.collider.gameObject == gameObject)
             {
                 Debug.Log("오브젝트 감지: " + hit.collider.gameObject.name);
                 Debug.Log("스위치 클릭");
